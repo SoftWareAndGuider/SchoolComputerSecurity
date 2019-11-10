@@ -12,23 +12,43 @@ namespace SchoolComputerAdmin
 {
     public partial class Form1 : Form
     {
+        JObject setting = new JObject();
+        bool looping = true;
+        int monitor = 1;
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void GetImage_Tick(object sender, EventArgs e)
-        {
             Thread thread = new Thread(new ThreadStart(loop));
             thread.Start();
         }
         private void loop()
         {
-            WebClient client = new WebClient();
-            string download = client.DownloadString("JSON Server1");
-            JObject jObject = JObject.Parse(download);
-            Bitmap bitmap = Base64ToBitmap(jObject["Computer"].ToString());
-            pictureBox1.Image = bitmap;
+            while (looping)
+            {
+                WebClient client = new WebClient();
+                string download = client.DownloadString("JSON Server 1");
+                JObject jObject = JObject.Parse(download);
+                if (jObject["Second"] == null)
+                {
+                    번모니터ToolStripMenuItem1.Enabled = false;
+                    monitor = 1;
+                }
+                else
+                {
+                    번모니터ToolStripMenuItem1.Enabled = true;
+                }
+                Bitmap bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
+                if (monitor == 1)
+                {
+                    bitmap = Base64ToBitmap(jObject["First"].ToString());
+                }
+                else
+                {
+                    bitmap = Base64ToBitmap(jObject["Second"].ToString());
+                }
+                pictureBox1.Image = bitmap;
+                Thread.Sleep(250);
+            }
         }
         private Bitmap Base64ToBitmap(string base64)
         {
@@ -43,7 +63,22 @@ namespace SchoolComputerAdmin
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            GetImage.Enabled = false;
+            looping = false;
+        }
+
+        private void 금지ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 번모니터ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            monitor = 1;
+        }
+
+        private void 번모니터ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            monitor = 2; 
         }
     }
 }

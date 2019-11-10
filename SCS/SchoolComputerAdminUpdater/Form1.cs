@@ -27,13 +27,13 @@ namespace SchoolComputerAdminUpdater
                     Directory.CreateDirectory(programpath);
                     string ftpPath = "FTP Server 1";
                     string targetPath = @"..\Program\SCSA.zip";
-                    string userID = "FTP ID";
-                    string password = "FTP PW";
+                    string userID = "updater";
+                    string password = "update";
                     client.Credentials = new NetworkCredential(userID, password);
                     client.DownloadFile(ftpPath, targetPath);
                     System.Threading.Thread.Sleep(100);
                     ZipFile.ExtractToDirectory($@"{programpath}\SCSA.zip", programpath);
-                    client.DownloadFile("https://api.myjson.com/bins/uetg0", "version.json");
+                    client.DownloadFile("JSON Server 2", "version.json");
                 }
                 System.Diagnostics.Process.Start(@"..\Program\SCSA.exe");
                 Application.Exit();

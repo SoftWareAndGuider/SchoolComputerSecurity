@@ -27,8 +27,8 @@ namespace SchoolComputerUserUpdater
                     Directory.CreateDirectory(programpath);
                     string ftpPath = "FTP Server 1";
                     string targetPath = @"..\Program\SCSU.zip";
-                    string userID = "FTP ID";
-                    string password = "FTP PW";
+                    string userID = "updater";
+                    string password = "update";
                     client.Credentials = new NetworkCredential(userID, password);
                     client.DownloadFile(ftpPath, targetPath);
                     System.Threading.Thread.Sleep(100);

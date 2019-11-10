@@ -22,19 +22,24 @@ namespace SchoolComputerUser
         {
             try
             {
-                Bitmap screen = CaptureImage();
+                Bitmap screen = CaptureImage(0);
                 string base64 = ToBase64(screen);
                 JObject upload = new JObject();
-                upload.Add("Computer", base64);
+                upload.Add("First", base64);
+                if (SystemInformation.MonitorCount > 1)
+                {
+                    Bitmap second = CaptureImage(1);
+                    upload.Add("Second", ToBase64(second));
+                }
                 WebClient client = new WebClient();
                 client.Headers.Add("Content-Type", "application/json");
                 client.UploadString("JSON Server 1", "PUT", upload.ToString());
             }
             catch { }
         }
-        private Bitmap CaptureImage()
+        private Bitmap CaptureImage(int i)
         {
-            Rectangle rectangle = Screen.PrimaryScreen.Bounds;
+            Rectangle rectangle = Screen.AllScreens[i].Bounds;
             int bpp = Screen.PrimaryScreen.BitsPerPixel;
             PixelFormat pixelFormat = PixelFormat.Format32bppArgb;
             if (bpp <= 16)
@@ -50,6 +55,8 @@ namespace SchoolComputerUser
             {
                 gp.CopyFromScreen(rectangle.Left, rectangle.Top, 0, 0, rectangle.Size);
             }
+            Size resize = new Size(1280, 720);
+            bitmap = new Bitmap(bitmap, resize);
             return bitmap;
         }
         private string ToBase64(Bitmap bitmap)
