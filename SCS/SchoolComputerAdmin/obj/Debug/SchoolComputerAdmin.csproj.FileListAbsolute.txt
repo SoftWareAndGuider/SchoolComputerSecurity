@@ -1,0 +1,12 @@
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SchoolComputerAdmin.csprojAssemblyReference.cache
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SchoolComputerAdmin.Form1.resources
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SchoolComputerAdmin.csproj.GenerateResource.cache
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SchoolComputerAdmin.csproj.CopyComplete
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\bin\Debug\SCSA.exe.config
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\bin\Debug\SCSA.exe
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\bin\Debug\SCSA.pdb
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SCSA.exe
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SCSA.pdb
+C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerAdmin\obj\Debug\SchoolComputerAdmin.Properties.Resources.resources

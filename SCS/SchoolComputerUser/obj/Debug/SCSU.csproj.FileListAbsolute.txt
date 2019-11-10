@@ -1,0 +1,12 @@
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\bin\Debug\SCSU.exe.config
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\bin\Debug\SCSU.exe
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\bin\Debug\SCSU.pdb
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SCSU.csprojAssemblyReference.cache
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SchoolComputerUser.Form1.resources
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SchoolComputerUser.Properties.Resources.resources
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SCSU.csproj.GenerateResource.cache
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SCSU.csproj.CopyComplete
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SCSU.exe
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SCS\SchoolComputerUser\obj\Debug\SCSU.pdb
