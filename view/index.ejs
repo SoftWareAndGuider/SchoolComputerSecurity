@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src='http://js.zapjs.com/js/download.js'></script>
+  </head>
+  <body style="background-color: #2C2F33; padding: 15% 10%;">
+    <div class="row">
+      <div class="card col-lg-3">
+        <img class="card-img-top render">
+        <div class="card-body">
+          <h5 class="card-title">2학년 1반</h5>
+          <a href="#" class="btn btn-primary">확대하기</a>
+        </div>
+      </div>
+      <div class="card col-lg-3">
+        <img class="card-img-top render">
+        <div class="card-body">
+          <h5 class="card-title">2학년 2반</h5>
+          <a href="#" class="btn btn-primary">확대하기</a>
+        </div>
+      </div>
+      <div class="card col-lg-3">
+        <img class="card-img-top render">
+        <div class="card-body">
+          <h5 class="card-title">2학년 3반</h5>
+          <a href="#" class="btn btn-primary">확대하기</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-white text-center">
+      <hr />
+      Copyright &copy; 장곡중학교(칠곡), SoftWare And Guiders
+    </div>
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
+
+    * {
+      font-family: 'Jua', sans-serif;
+    }
+
+    .card {
+      margin: 10px 30px;
+    }
+    </style>
+
+    <script>
+      async function click (room) {
+        let res = await fetch('/api/imgJson/2/' + room)
+        res = await res.json()
+        download('data:application/octet-stream;base64,' + res[0], '2학년 ' + room + '반.png', 'application/octet-stream;base64');
+      }
+      
+      setInterval(async () => {
+        for (let room = 1; room < 4; room++) {
+          let res = await fetch('/api/imgJson/2/' + room)
+          res = await res.text()
+          res = res.split(';')
+          if (res[0] === '') {
+            document.getElementsByClassName('render')[room - 1].setAttribute('src', 'https://ak4.picdn.net/shutterstock/videos/1011406034/thumb/1.jpg')
+          } else document.getElementsByClassName('render')[room - 1].setAttribute('src', 'data:image/png;base64, ' + res[0])
+        }
+      }, 200)
+    </script>
+  </body>
+</html>
