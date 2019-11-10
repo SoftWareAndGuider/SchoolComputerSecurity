@@ -27,7 +27,7 @@ namespace SCSA
                 try
                 {
                     WebClient client = new WebClient();
-                    string download = client.DownloadString("Text Server");
+                    string download = client.DownloadString("Text Server 1");
                     string[] split = download.Split(';');
                     if (split.Length == 1)
                     {

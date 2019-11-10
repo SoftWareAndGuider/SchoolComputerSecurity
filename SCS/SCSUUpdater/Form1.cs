@@ -25,7 +25,7 @@ namespace SCSUUpdater
                     string programpath = @"..\Program";
                     Directory.Delete(programpath, true);
                     Directory.CreateDirectory(programpath);
-                    string ftpPath = "FTP Server";
+                    string ftpPath = "FTP Server 1";
                     string targetPath = @"..\Program\SCSU.zip";
                     string userID = "updater";
                     string password = "update";

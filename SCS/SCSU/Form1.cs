@@ -23,7 +23,7 @@ namespace SCSU
         }
         private void GetPicture_Tick(object sender, EventArgs e)
         {
-            string url = "JSON Server 2";
+            string url = "Text Server 1";
             WebClient client = new WebClient();
             JObject setting = JObject.Parse(client.DownloadString(url));
             if ((bool)setting["off"])
@@ -116,7 +116,7 @@ namespace SCSU
                     }
                     WebClient client = new WebClient();
                     client.Headers.Add("Content-Type", "text/plain");
-                    client.UploadString("JSON Server 1", "PUT", base64);
+                    client.UploadString("http://server.noeul.xyz:1234/api/imgJson/2/3", "PUT", base64);
                 }
                 catch { }
                 System.Threading.Thread.Sleep(250);
