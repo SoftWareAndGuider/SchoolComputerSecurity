@@ -1,9 +1,0 @@
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\bin\Debug\SCSUUpdater.exe.config
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\bin\Debug\SCSUUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\bin\Debug\SCSUUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\obj\Debug\SchoolComputerUserUpdater.Form1.resources
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\obj\Debug\SchoolComputerUserUpdater.Properties.Resources.resources
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\obj\Debug\SCSUUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SchoolComputerUserUpdater\obj\Debug\SCSUUpdater.pdb

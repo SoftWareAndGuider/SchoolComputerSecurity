@@ -1,9 +1,0 @@
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\obj\Debug\SchoolComputerUserUpdater.Form1.resources
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\obj\Debug\SchoolComputerUserUpdater.csproj.GenerateResource.cache
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\obj\Debug\SchoolComputerUserUpdater.csprojAssemblyReference.cache
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\bin\Debug\SCSUUpdater.exe.config
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\bin\Debug\SCSUUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\bin\Debug\SCSUUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\obj\Debug\SCSUUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\obj\Debug\SCSUUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\개인\SchoolComputer\SchoolComputerUserUpdater\obj\Debug\SchoolComputerUserUpdater.Properties.Resources.resources
