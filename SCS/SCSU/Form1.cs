@@ -23,32 +23,36 @@ namespace SCSU
         }
         private void GetPicture_Tick(object sender, EventArgs e)
         {
-            string url = "Text Server 1";
+            string url = "https://api.myjson.com/bins/t8642";
             WebClient client = new WebClient();
             JObject setting = JObject.Parse(client.DownloadString(url));
             if ((bool)setting["off"])
             {
                 setting["off"] = false;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url, "PUT", setting.ToString());
                 System.Diagnostics.Process.Start("shutdown /s /t 0");
             }
             if ((bool)setting["reboot"])
             {
                 setting["reboot"] = false;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url, "PUT", setting.ToString());
                 System.Diagnostics.Process.Start("shutdown /r /t 0");
             }
             if ((bool)setting["standby"])
             {
                 setting["standby"] = false;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url, "PUT", setting.ToString());
                 Application.SetSuspendState(PowerState.Suspend, false, false);
             }
             if ((bool)setting["havemessage"])
             {
                 setting["havemessage"] = false;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url, "PUT", setting.ToString());
-                MessageBox.Show(setting["message"].ToString(),"새 매시지");
+                MessageBox.Show(setting["message"].ToString(),"New Message");
             }
             if ((bool)setting["cmd"] != cmd)
             {
@@ -124,7 +128,8 @@ namespace SCSU
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            loop();
+            Thread thread = new Thread(new ThreadStart(loop));
+            thread.Start();
         }
     }
 }

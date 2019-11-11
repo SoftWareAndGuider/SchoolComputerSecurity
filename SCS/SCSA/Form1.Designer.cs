@@ -116,13 +116,13 @@
             // 금지ToolStripMenuItem2
             // 
             this.금지ToolStripMenuItem2.Name = "금지ToolStripMenuItem2";
-            this.금지ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.금지ToolStripMenuItem2.Size = new System.Drawing.Size(98, 22);
             this.금지ToolStripMenuItem2.Text = "금지";
             // 
             // 허용ToolStripMenuItem2
             // 
             this.허용ToolStripMenuItem2.Name = "허용ToolStripMenuItem2";
-            this.허용ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.허용ToolStripMenuItem2.Size = new System.Drawing.Size(98, 22);
             this.허용ToolStripMenuItem2.Text = "허용";
             // 
             // cmdㅎToolStripMenuItem
@@ -159,8 +159,9 @@
             // 메세지전송ToolStripMenuItem
             // 
             this.메세지전송ToolStripMenuItem.Name = "메세지전송ToolStripMenuItem";
-            this.메세지전송ToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
-            this.메세지전송ToolStripMenuItem.Text = "메세지 전송 (개발중...)";
+            this.메세지전송ToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.메세지전송ToolStripMenuItem.Text = "메세지 전송";
+            this.메세지전송ToolStripMenuItem.Click += new System.EventHandler(this.메세지전송ToolStripMenuItem_Click);
             // 
             // 모니터보기ToolStripMenuItem
             // 

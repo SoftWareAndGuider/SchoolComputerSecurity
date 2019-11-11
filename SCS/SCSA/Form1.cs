@@ -95,6 +95,7 @@ namespace SCSA
                 WebClient client = new WebClient();
                 JObject setting = JObject.Parse(client.DownloadString("https://api.myjson.com/bins/t8642"));
                 setting["off"] = true;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString("https://api.myjson.com/bins/t8642", "PUT", setting.ToString());
             }
         }
@@ -106,6 +107,7 @@ namespace SCSA
                 WebClient client = new WebClient();
                 JObject setting = JObject.Parse(client.DownloadString("https://api.myjson.com/bins/t8642"));
                 setting["reboot"] = true;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString("https://api.myjson.com/bins/t8642", "PUT", setting.ToString());
             }
         }
@@ -117,8 +119,15 @@ namespace SCSA
                 WebClient client = new WebClient();
                 JObject setting = JObject.Parse(client.DownloadString("https://api.myjson.com/bins/t8642"));
                 setting["standby"] = true;
+                client.Headers.Add("Content-Type", "application/json");
                 client.UploadString("https://api.myjson.com/bins/t8642", "PUT", setting.ToString());
             }
+        }
+
+        private void 메세지전송ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SCSASandMessage message = new SCSASandMessage();
+            message.ShowDialog();
         }
     }
 }
