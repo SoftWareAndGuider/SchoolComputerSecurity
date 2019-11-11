@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>장곡중학교 컴퓨터화면</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,40 +14,74 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1213a7cbad.js" crossorigin="anonymous"></script>
+    <script src="https://raw.githubusercontent.com/github/fetch/master/fetch.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
     <script src='http://js.zapjs.com/js/download.js'></script>
   </head>
-  <body style="background-color: #2C2F33; padding: 15% 10%;">
-    <div class="row">
-      <div class="card col-lg-3">
-        <img class="card-img-top render">
-        <div class="card-body">
-          <h5 class="card-title">2학년 1반</h5>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#mod1">확대하기</button>
-          <button class="btn btn-primary" id="down2-1">화면 찍기</button>
+  <body>
+    <div class="container-fluid">
+      <div class="text-white text-center toptext">
+        <h1>
+          장곡중학교 학급내 정보화기기 관리 페이지 <i class="fas fa-desktop"></i>
+        </h1>
+        <h6>
+          Copyright <i class="fas fa-copyright"></i> 2019~2020. 장곡중학교(칠곡) - Software And Guiders, MIT Licensed.<br />
+          모든 저작권은 (칠곡)장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다
+        </h6>
+        <hr class="bg-light" />
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <i class="fas fa-info-circle"></i> <strong>잠깐만요!</strong> 기능이 작동하지 않거나 맞춤법, 문법 오류 등을 발견했다면<br />
+          2학년 1반 임태현, 2반 박민혁, 3반 배재현을 불러주세요!
         </div>
       </div>
-      <div class="card col-lg-3">
-        <img class="card-img-top render">
-        <div class="card-body">
-          <h5 class="card-title">2학년 2반</h5>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#mod2">확대하기</button>
-          <button class="btn btn-primary" id="down2-2">화면 찍기</button>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <img class="card-img-top render">
+            <div class="card-body">
+              <h5 class="card-title">2학년 1반</h5>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#mod1"><i class="fas fa-search-plus"></i> 확대하기</button>
+              <button class="btn btn-secondary" id="down2-1"><i class="fas fa-file-image"></i> 화면 찍기</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <img class="card-img-top render">
+            <div class="card-body">
+              <h5 class="card-title">2학년 2반</h5>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#mod2"><i class="fas fa-search-plus"></i> 확대하기</button>
+              <button class="btn btn-secondary" id="down2-2"><i class="fas fa-file-image"></i> 화면 찍기</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card col-lg-3">
-        <img class="card-img-top render">
-        <div class="card-body">
-          <h5 class="card-title">2학년 3반</h5>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#mod3">확대하기</button>
-          <button class="btn btn-primary" id="down2-3">화면 찍기</button>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+          <img class="card-img-top render">
+            <div class="card-body">
+              <h5 class="card-title">2학년 3반</h5>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#mod3"><i class="fas fa-search-plus"></i> 확대하기</button>
+              <button class="btn btn-secondary" id="down2-3"><i class="fas fa-file-image"></i> 화면 찍기</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <img class="card-img-top render">
+            <div class="card-body">
+              <h5 class="card-title">2학년 4반</h5>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#mod4"><i class="fas fa-search-plus"></i> 확대하기</button>
+              <button class="btn btn-secondary" id="down2-4"><i class="fas fa-file-image"></i> 화면 찍기</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="text-white text-center">
-      <hr />
-      Copyright &copy; 장곡중학교(칠곡), SoftWare And Guiders
-    </div>
 
     <div class="modal fade" id="mod1" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -58,7 +92,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body text-center">
             <img class="fullRender">
           </div>
         </div>
@@ -74,7 +108,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body text-center">
             <img class="fullRender">
           </div>
         </div>
@@ -89,42 +123,70 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body text-center">
+            <img class="fullRender">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="mod4" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">2학년 4반</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
             <img class="fullRender">
           </div>
         </div>
       </div>
     </div>
     <style>
-    @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
-    body {
-      overflow: hidden;
-    }
+      @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
+      
+      * {
+        font-family: 'Jua', sans-serif;
+      }
+      
+      body {
+        background-color: #2C2F33;
+      }
 
-    .modal-dialog {
-      width: 100vw !important;
-      height: 100vh !important;
-      margin: 0px;
-    }
+      .toptext {
+        margin-top: 15px
+      }
 
-    .modal-content {
-      width: 100vw !important;
-      height: 100vh !important;
-      margin: 0px;
-    }
-    
-    .fullRender {
-      width: 85%;
-    }
+      .modal-dialog {
+        width: 100vw !important;
+        height: 100vh !important;
+        margin: 0px;
+      }
 
-    * {
-      font-family: 'Jua', sans-serif;
-    }
+      .row {
+        padding: 10px;
+      }
 
-    .card {
-      margin: 10px 30px;
-      opacity: 0%;
-    }
+      .modal-content {
+        width: 100vw !important;
+        height: 100vh !important;
+        margin: 0px;
+      }
+      
+      .fullRender {
+        width: 85%;
+      }
+
+
+      .card {
+        opacity: 0%;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+      }
     </style>
 
     <script>
@@ -134,28 +196,41 @@
         fetch('/api/imgJson/2/1').then(async (res) => {
           res = await res.text()
           res = res.split(';')
-          download('data:application/octet-stream;base64,' + res[0], '2학년 1반.png', 'application/octet-stream;base64');
+          if (res[0] === '') {
+            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
+          } else download('data:application/octet-stream;base64,' + res[0], '2학년 1반.png', 'application/octet-stream;base64');
         })
       }
       document.getElementById('down2-2').onclick = () => {
         fetch('/api/imgJson/2/2').then(async (res) => {
           res = await res.text()
           res = res.split(';')
-          download('data:application/octet-stream;base64,' + res[0], '2학년 2반.png', 'application/octet-stream;base64');
+          if (res[0] === '') {
+            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
+          } else download('data:application/octet-stream;base64,' + res[0], '2학년 2반.png', 'application/octet-stream;base64');
         })
       }
       document.getElementById('down2-3').onclick = () => {
         fetch('/api/imgJson/2/3').then(async (res) => {
           res = await res.text()
           res = res.split(';')
-          download('data:application/octet-stream;base64,' + res[0], '2학년 3반.png', 'application/octet-stream;base64');
+          if (res[0] === '') {
+            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
+          } else download('data:application/octet-stream;base64,' + res[0], '2학년 3반.png', 'application/octet-stream;base64');
         })
       }
-      
-
+      document.getElementById('down2-4').onclick = () => {
+        fetch('/api/imgJson/2/4').then(async (res) => {
+          res = await res.text()
+          res = res.split(';')
+          if (res[0] === '') {
+            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
+          } else download('data:application/octet-stream;base64,' + res[0], '2학년 4반.png', 'application/octet-stream;base64');
+        })
+      }
 
       setInterval(async () => {
-        for (let room = 1; room < 4; room++) {
+        for (let room = 1; room < 5; room++) {
           let res = await fetch('/api/imgJson/2/' + room)
           res = await res.text()
           res = res.split(';')
