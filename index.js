@@ -64,7 +64,7 @@ app.get('/api/mgrJson/:grade/:room', (req, res) => {
   if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
 
   // [종료, 리붓, 절전, 메세지 유뮤, 메세지 내용, 명령, tm]]
-  res.send(JSON.parse(mgrData[grade][room]))
+  res.send(JSON.stringify(mgrData[grade][room]))
   mgrData[grade][room] = [false, false, false, false, '', mgrData[grade][room][5], mgrData[grade][room][6]]
 })
 
@@ -86,7 +86,7 @@ app.put('/api/mgrJson/:grade/:room', (req, res) => {
 app.get('/api/macJson/', (req, res) => {
   console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
-  res.send(JSON.parse(macData))
+  res.send(macData)
 })
 
 app.put('/api/macJson/', (req, res) => {
