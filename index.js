@@ -83,18 +83,14 @@ app.put('/api/mgrJson/:grade/:room', (req, res) => {
 // }
 
 // Mac Address {
-app.get('/api/macJson/:grade/:room/', (req, res) => {
-  const grade = req.params.grade
-  const room = req.params.room
-  console.log(chalk.bgBlue.black('[macGet] ' + grade + '-' + room + ' by ' + req.ip))
+app.get('/api/macJson/', (req, res) => {
+  console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
-  res.send(JSON.parse(macData[grade][room]))
+  res.send(JSON.parse(macData))
 })
 
-app.put('/api/macJson/:grade/:room/', (req, res) => {
-  const grade = req.params.grade
-  const room = req.params.room
-  console.log(chalk.bgGreen.black('[macPut] ' + grade + '-' + room + ' by ' + req.ip))
+app.put('/api/macJson/', (req, res) => {
+  console.log(chalk.bgGreen.black('[macPut] by ' + req.ip))
 
   res.sendStatus(200)
 })
