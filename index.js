@@ -6,52 +6,102 @@ const path = require('path').resolve()
 const chalk = require('chalk')
 const express = require('express')
 
-const data = [[], [], []]
+const imgData = [[], [], []]
 const offlineSW = [[], [], []]
+const mgrData = [[], [], []]
+const macData = [[], [], []]
 const app = express()
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
 
 setInterval(() => {
-  data.forEach((grade, i1) => {
+  imgData.forEach((grade, i1) => {
     grade.forEach((_room, i2) => {
-      if (!offlineSW[i1][i2]) data[i1][i2] = ''
+      if (!offlineSW[i1][i2]) imgData[i1][i2] = ''
       else offlineSW[i1][i2] = false
     })
   })
 }, 30000)
 
+// 웹페이지 부분 {
 app.get('/', (_req, res) => res.redirect('/view'))
 app.get('/view', (req, res) => {
   console.log(chalk.bgBlue.black('[webGet] by ' + req.ip))
-  ejs.renderFile(path + '/view/index.ejs', { data }, (err, str) => {
+  ejs.renderFile(path + '/view/index.ejs', { imgData }, (err, str) => {
     if (err) console.log(err)
     res.send(str)
   })
 })
 
+// }
+
+// Base64 JSON {
 app.get('/api/imgJson/:grade/:room', (req, res) => {
   const grade = req.params.grade
   const room = req.params.room
   console.log(chalk.bgBlue.black('[imgGet] ' + grade + '-' + room + ' by ' + req.ip))
-
-  if (grade > 0 && room > 0 && grade < 4 && room < 13) {
-    res.send(data[grade][room])
-  } else res.sendStatus(404)
+  res.send(imgData[grade][room])
 })
 
-app.put('/api/imgJson/:grade/:room/', (req, res) => {
+app.put('/api/imgJson/:grade/:room', (req, res) => {
   const grade = req.params.grade
   const room = req.params.room
   console.log(chalk.bgGreen.black('[imgPut] ' + grade + '-' + room + ' by ' + req.ip))
   offlineSW[grade][room] = true
+  imgData[grade][room] = req.body
 
-  if (grade > 0 && room > 0 && grade < 4 && room < 13) {
-    data[grade][room] = req.body
-    res.sendStatus(200)
-  } else res.sendStatus(404)
+  res.sendStatus(200)
 })
 
+// }
+
+// 시스템 종료, 절전 관리 {
+app.get('/api/mgrJson/:grade/:room', (req, res) => {
+  const grade = req.params.grade
+  const room = req.params.room
+  console.log(chalk.bgBlue.black('[mgrGet] ' + grade + '-' + room + ' by ' + req.ip))
+
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+
+  // [종료, 리붓, 절전, 메세지 유뮤, 메세지 내용, 명령, tm]]
+  res.send(JSON.parse(mgrData[grade][room]))
+  mgrData[grade][room] = [false, false, false, false, '', mgrData[grade][room][5], mgrData[grade][room][6]]
+})
+
+app.put('/api/mgrJson/:grade/:room', (req, res) => {
+  const grade = req.params.grade
+  const room = req.params.room
+  console.log(chalk.bgGreen.black('[mgrPut] ' + grade + '-' + room + ' by ' + req.ip))
+
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+
+  mgrData[grade][room][5] = JSON.parse(req.body.split(';')[0])
+  mgrData[grade][room][6] = JSON.parse(req.body.split(';')[1])
+  res.sendStatus(200)
+})
+
+// }
+
+// Mac Address {
+app.get('/api/macJson/:grade/:room/', (req, res) => {
+  const grade = req.params.grade
+  const room = req.params.room
+  console.log(chalk.bgBlue.black('[macGet] ' + grade + '-' + room + ' by ' + req.ip))
+
+  res.send(JSON.parse(macData[grade][room]))
+})
+
+app.put('/api/macJson/:grade/:room/', (req, res) => {
+  const grade = req.params.grade
+  const room = req.params.room
+  console.log(chalk.bgGreen.black('[macPut] ' + grade + '-' + room + ' by ' + req.ip))
+
+  res.sendStatus(200)
+})
+// }
+
+// 포트에서 값을 읽어옴 {
 app.listen(PORT, () => {
   console.log(chalk.black.bgYellow('School Computer Security Server is now on http://localhost:') + chalk.black.bgYellow.bold(PORT))
 })
+// }
