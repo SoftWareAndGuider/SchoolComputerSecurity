@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>장곡중학교 컴퓨터화면</title>
+    <title>장곡중학교 - 정보화기기</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,126 +25,84 @@
         <h1>
           장곡중학교 학급내 정보화기기 관리 페이지 <i class="fas fa-desktop"></i>
         </h1>
+        <hr class="bg-light" />
+        <div class="alertZone">
+          <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>잠깐만요!</strong> 아직 이 서비스는 <span class="badge badge-danger">Beta</span> 버전입니다! 기능이 불안정할 수 도 있으니 양해부탁드립니다
+          </div>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <i class="fas fa-info-circle"></i> <strong>잠깐만요!</strong> 기능이 작동하지 않거나 맞춤법, 문법 오류 등을 발견했다면<br />2학년 1반 임태현, 2반 박민혁, 3반 배재현을 불러주세요!
+          </div>
+        </div>
+      </div>
+      <div class="row relative text-center">
+        <div class="col-lg-3">
+          <button class="btn gradeBtn btn-danger text-white text-center" rel="tooltip" data-placement="top" data-html="true" title="1학년은 아직 지원하지 않아요! <br />잠시만 기다려 주세요!">
+            <h1><i class="fas fa-user"></i></h1>
+            <h5 class="card-title">1학년</h5>
+          </button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn gradeBtn btn-warning text-white text-center" rel="tooltip" data-placement="top" data-html="true" data-toggle="modal" data-target="#grade2Connect" title="여기를 눌러<br />관리도구로 이동합니다!">
+            <h1><i class="fas fa-user-friends"></i></h1>
+            <h5 class="card-title">2학년</h5>
+          </button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn gradeBtn btn-success text-white text-center" rel="tooltip" data-placement="top" data-html="true" title="3학년은 아직 지원하지 않아요! <br />잠시만 기다려 주세요!">
+            <h1><i class="fas fa-users"></i></h1>
+            <h5 class="card-title">3학년</h5>
+          </button>
+        </div>
+      </div>
+      <div class="fixed-bottom text-white text-center copyright">
         <h6>
           Copyright <i class="fas fa-copyright"></i> 2019~2020. 장곡중학교(칠곡) - Software And Guiders, MIT Licensed.<br />
-          모든 저작권은 (칠곡)장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다
+          모든 저작권은 (칠곡)장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다<br />
+          이 소프트웨어 및 웹페이지, 서버는 장곡중학교(칠곡) 교사님들의 의견을 반영하여 제작되었습니다 <i class="fas fa-heart"></i> 
         </h6>
-        <hr class="bg-light" />
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <i class="fas fa-info-circle"></i> <strong>잠깐만요!</strong> 기능이 작동하지 않거나 맞춤법, 문법 오류 등을 발견했다면<br />
-          2학년 1반 임태현, 2반 박민혁, 3반 배재현을 불러주세요!
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="card">
-            <img class="card-img-top render">
-            <div class="card-body">
-              <h5 class="card-title">2학년 1반</h5>
-              <button class="btn btn-primary" data-toggle="modal" data-target="#mod1"><i class="fas fa-search-plus"></i> 확대하기</button>
-              <button class="btn btn-secondary" id="down2-1"><i class="fas fa-file-image"></i> 화면 찍기</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="card">
-            <img class="card-img-top render">
-            <div class="card-body">
-              <h5 class="card-title">2학년 2반</h5>
-              <button class="btn btn-primary" data-toggle="modal" data-target="#mod2"><i class="fas fa-search-plus"></i> 확대하기</button>
-              <button class="btn btn-secondary" id="down2-2"><i class="fas fa-file-image"></i> 화면 찍기</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="card">
-          <img class="card-img-top render">
-            <div class="card-body">
-              <h5 class="card-title">2학년 3반</h5>
-              <button class="btn btn-primary" data-toggle="modal" data-target="#mod3"><i class="fas fa-search-plus"></i> 확대하기</button>
-              <button class="btn btn-secondary" id="down2-3"><i class="fas fa-file-image"></i> 화면 찍기</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="card">
-            <img class="card-img-top render">
-            <div class="card-body">
-              <h5 class="card-title">2학년 4반</h5>
-              <button class="btn btn-primary" data-toggle="modal" data-target="#mod4"><i class="fas fa-search-plus"></i> 확대하기</button>
-              <button class="btn btn-secondary" id="down2-4"><i class="fas fa-file-image"></i> 화면 찍기</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="modal fade" id="mod1" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">2학년 1반</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body text-center">
-            <img class="fullRender">
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="modal fade" id="mod2" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">2학년 2반</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body text-center">
-            <img class="fullRender">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="mod3" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">2학년 3반</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body text-center">
-            <img class="fullRender">
-          </div>
-        </div>
       </div>
     </div>
 
-    <div class="modal fade" id="mod4" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">2학년 4반</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body text-center">
-            <img class="fullRender">
+    <!-- Modal -->
+    <div class="modal fade" id="grade2Connect" tabindex="-1" role="dialog" aria-labelledby="grade2ConnectLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="grade2ConnectLabel">2학년 관리 서버 접속</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="tgroom">접속할 반</label>
+                <select class="form-control" id="tgroom">
+                  <% for (let c = 1; c < 13; c++) { %>
+                    <option value="<%- c %>">2학년 <%= c %>반</option>
+                  <% } %>
+                </select>
+                <small class="form-text text-muted">문제가 생기지 않도록 최대한 다른 반에 접속하지 말아주세요.</small>
+              </div>
+              <div class="form-group">
+                <label for="tgpw">접속 비밀번호</label>
+                <input type="password" class="form-control" id="tgpw" placeholder="비밀번호를 여기 적어주세요">
+                <small class="form-text text-muted">접속할 반에 따라 비밀번호가 달라집니다.</small>
+              </div>  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> 취소</button>
+              <button type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> 이동!</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
       
@@ -153,96 +111,63 @@
       }
       
       body {
+        height: 100vh;
         background-color: #2C2F33;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
       }
 
       .toptext {
         margin-top: 15px
       }
 
-      .modal-dialog {
-        width: 100vw !important;
-        height: 100vh !important;
-        margin: 0px;
+      .relative {
+        position: absolute;
+        top: 45%;
+        left: 32%;
+        width: 50vw;
       }
 
-      .row {
-        padding: 10px;
-      }
-
-      .modal-content {
-        width: 100vw !important;
-        height: 100vh !important;
-        margin: 0px;
-      }
-      
-      .fullRender {
-        width: 85%;
-      }
-
-
-      .card {
+      .gradeBtn {
+        padding: 5vh 0px;
+        height: 100%;
+        width: 100%;
         opacity: 0%;
         -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
         box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
       }
+
+      .gradeBtn:hover {
+        -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
+        -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
+        box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
+      }
+
+      .alertZone {
+        width: 50vw;
+        margin-left: 25vw;
+      }
+
+      @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+      }
     </style>
 
     <script>
-      anime({ targets: '.card', translateY: -1000, complete: () => { anime({ targets: '.card', translateY: 0, opacity: 100 }) } })
-
-      document.getElementById('down2-1').onclick = () => {
-        fetch('/api/imgJson/2/1').then(async (res) => {
-          res = await res.text()
-          res = res.split(';')
-          if (res[0] === '') {
-            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
-          } else download('data:application/octet-stream;base64,' + res[0], '2학년 1반.png', 'application/octet-stream;base64');
-        })
-      }
-      document.getElementById('down2-2').onclick = () => {
-        fetch('/api/imgJson/2/2').then(async (res) => {
-          res = await res.text()
-          res = res.split(';')
-          if (res[0] === '') {
-            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
-          } else download('data:application/octet-stream;base64,' + res[0], '2학년 2반.png', 'application/octet-stream;base64');
-        })
-      }
-      document.getElementById('down2-3').onclick = () => {
-        fetch('/api/imgJson/2/3').then(async (res) => {
-          res = await res.text()
-          res = res.split(';')
-          if (res[0] === '') {
-            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
-          } else download('data:application/octet-stream;base64,' + res[0], '2학년 3반.png', 'application/octet-stream;base64');
-        })
-      }
-      document.getElementById('down2-4').onclick = () => {
-        fetch('/api/imgJson/2/4').then(async (res) => {
-          res = await res.text()
-          res = res.split(';')
-          if (res[0] === '') {
-            alert('오프라인 상태에서 사진을 찍을 수 없습니다!')
-          } else download('data:application/octet-stream;base64,' + res[0], '2학년 4반.png', 'application/octet-stream;base64');
-        })
-      }
-
-      setInterval(async () => {
-        for (let room = 1; room < 5; room++) {
-          let res = await fetch('/api/imgJson/2/' + room)
-          res = await res.text()
-          res = res.split(';')
-          if (res[0] === '') {
-            document.getElementsByClassName('render')[room - 1].setAttribute('src', 'https://ak4.picdn.net/shutterstock/videos/1011406034/thumb/1.jpg')
-            document.getElementsByClassName('fullRender')[room - 1].setAttribute('src', 'https://ak4.picdn.net/shutterstock/videos/1011406034/thumb/1.jpg')
-          } else {
-            document.getElementsByClassName('render')[room - 1].setAttribute('src', 'data:image/png;base64, ' + res[0])
-            document.getElementsByClassName('fullRender')[room - 1].setAttribute('src', 'data:image/png;base64, ' + res[0])
-          }
-        }
-      }, 200)
+      $(document).ready(() => {
+        $('[rel="tooltip"]').tooltip({trigger: "hover"});
+      })
+      anime({ targets: '.gradeBtn', duration: 1, translateY: -1000, complete: () => { anime({ targets: '.gradeBtn', translateY: -80, opacity: 100, delay: anime.stagger(100) }) } })
     </script>
   </body>
 </html>

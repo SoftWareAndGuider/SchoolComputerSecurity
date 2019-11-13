@@ -9,7 +9,7 @@ const express = require('express')
 const imgData = [[], [], []]
 const offlineSW = [[], [], []]
 const mgrData = [[], [], []]
-const macData = [[], [], []]
+const macData = {}
 const app = express()
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
@@ -27,7 +27,7 @@ setInterval(() => {
 app.get('/', (_req, res) => res.redirect('/view'))
 app.get('/view', (req, res) => {
   console.log(chalk.bgBlue.black('[webGet] by ' + req.ip))
-  ejs.renderFile(path + '/view/index.ejs', { imgData }, (err, str) => {
+  ejs.renderFile(path + '/view/index.ejs', (err, str) => {
     if (err) console.log(err)
     res.send(str)
   })
@@ -37,8 +37,7 @@ app.get('/view', (req, res) => {
 
 // Base64 JSON {
 app.get('/api/imgJson/:grade/:room', (req, res) => {
-  const grade = req.params.grade
-  const room = req.params.room
+  const { grade, room } = req.params
   console.log(chalk.bgBlue.black('[imgGet] ' + grade + '-' + room + ' by ' + req.ip))
   res.send(imgData[grade][room])
 })
@@ -57,8 +56,7 @@ app.put('/api/imgJson/:grade/:room', (req, res) => {
 
 // 시스템 종료, 절전 관리 {
 app.get('/api/mgrJson/:grade/:room', (req, res) => {
-  const grade = req.params.grade
-  const room = req.params.room
+  const { grade, room } = req.params
   console.log(chalk.bgBlue.black('[mgrGet] ' + grade + '-' + room + ' by ' + req.ip))
 
   if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
@@ -69,8 +67,7 @@ app.get('/api/mgrJson/:grade/:room', (req, res) => {
 })
 
 app.put('/api/mgrJson/:grade/:room', (req, res) => {
-  const grade = req.params.grade
-  const room = req.params.room
+  const { grade, room } = req.params
   console.log(chalk.bgGreen.black('[mgrPut] ' + grade + '-' + room + ' by ' + req.ip))
 
   if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
@@ -83,15 +80,22 @@ app.put('/api/mgrJson/:grade/:room', (req, res) => {
 // }
 
 // Mac Address {
-app.get('/api/macJson/', (req, res) => {
+app.get('/api/macJson/:mac', (req, res) => {
+  const { mac } = req.params
   console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
-  res.send(macData)
+  if (!macData[mac]) res.send('Fail')
+  else res.send(macData[mac])
 })
 
-app.put('/api/macJson/', (req, res) => {
+app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
+  const { grade, room, mac } = req.params
   console.log(chalk.bgGreen.black('[macPut] by ' + req.ip))
 
+  macData[mac] = {
+    imgJson: '/api/imgJson/' + grade + '/' + room,
+    mgrJson: '/api/mgrJson/' + grade + '/' + room
+  }
   res.sendStatus(200)
 })
 // }
