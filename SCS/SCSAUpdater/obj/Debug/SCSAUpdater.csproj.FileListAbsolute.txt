@@ -6,11 +6,11 @@ C:\Users\hj666\source\repos\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.Properties.Res
 C:\Users\hj666\source\repos\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.csproj.GenerateResource.cache
 C:\Users\hj666\source\repos\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.exe
 C:\Users\hj666\source\repos\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\bin\Debug\SCSAUpdater.exe.config
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\bin\Debug\SCSAUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\bin\Debug\SCSAUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.csprojAssemblyReference.cache
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.Properties.Resources.resources
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.csproj.GenerateResource.cache
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.pdb
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\bin\Debug\SCSAUpdater.exe.config
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\bin\Debug\SCSAUpdater.exe
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\bin\Debug\SCSAUpdater.pdb
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.csprojAssemblyReference.cache
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.Properties.Resources.resources
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.csproj.GenerateResource.cache
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.exe
+C:\Users\배재현\Desktop\SCS\SCSAUpdater\obj\Debug\SCSAUpdater.pdb

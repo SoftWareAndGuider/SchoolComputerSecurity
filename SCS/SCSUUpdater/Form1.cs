@@ -20,25 +20,21 @@ namespace SCSUUpdater
             try
             {
                 WebClient client = new WebClient();
-                if (client.DownloadString("JSON Server 1") != File.ReadAllText("version.json"))
-                {
-                    string programpath = @"..\Program";
-                    Directory.Delete(programpath, true);
-                    Directory.CreateDirectory(programpath);
-                    string ftpPath = "FTP Server 1";
-                    string targetPath = @"..\Program\SCSU.zip";
-                    string userID = "updater";
-                    string password = "update";
-                    client.Credentials = new NetworkCredential(userID, password);
-                    client.DownloadFile(ftpPath, targetPath);
-                    System.Threading.Thread.Sleep(100);
-                    ZipFile.ExtractToDirectory($@"{programpath}\SCSU.zip", programpath);
-                    client.DownloadFile("JSON Server 1", "version.json");
-                }
-                System.Diagnostics.Process.Start(@"..\Program\SCSU.exe");
-                Application.Exit();
+                string programpath = @"Program";
+                Directory.Delete(programpath, true);
+                Directory.CreateDirectory(programpath);
+                string ftpPath = "ftp://server.noeul.xyz/fileshare/Uupdater.zip";
+                string targetPath = @"Program\SCSU.zip";
+                string userID = "fileshareftp";
+                string password = "noeulfile1412!";
+                client.Credentials = new NetworkCredential(userID, password);
+                client.DownloadFile(ftpPath, targetPath);
+                System.Threading.Thread.Sleep(100);
+                ZipFile.ExtractToDirectory($@"{programpath}\SCSU.zip", programpath);
             }
             catch { }
+            System.Diagnostics.Process.Start(@"Program\SCSU.exe");
+            Application.Exit();
         }
     }
 }

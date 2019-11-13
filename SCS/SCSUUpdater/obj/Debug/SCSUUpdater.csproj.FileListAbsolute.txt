@@ -16,12 +16,12 @@ C:\Users\hj666\Desktop\프로그래밍\개인\SCS\SCSUUpdater\obj\Debug\SCSUUpda
 C:\Users\hj666\Desktop\프로그래밍\개인\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
 C:\Users\hj666\Desktop\프로그래밍\개인\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
 C:\Users\hj666\Desktop\프로그래밍\개인\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
-C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SchoolComputerSecurity\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
+G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb

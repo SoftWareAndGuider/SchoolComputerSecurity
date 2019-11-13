@@ -34,7 +34,6 @@
             // 
             // GetPicture
             // 
-            this.GetPicture.Enabled = true;
             this.GetPicture.Interval = 250;
             this.GetPicture.Tick += new System.EventHandler(this.GetPicture_Tick);
             // 

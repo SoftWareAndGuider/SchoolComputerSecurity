@@ -20,20 +20,20 @@ namespace SCSAUpdater
             try
             {
                 WebClient client = new WebClient();
-                if (client.DownloadString("JSON Server 1") != File.ReadAllText("version.json"))
+                if (client.DownloadString("https://api.myjson.com/bins/uetg0") != File.ReadAllText("version.json"))
                 {
                     string programpath = @"..\Program";
                     Directory.Delete(programpath, true);
                     Directory.CreateDirectory(programpath);
-                    string ftpPath = "FTP Server";
+                    string ftpPath = "ftp://server.noeul.xyz";
                     string targetPath = @"..\Program\SCSA.zip";
-                    string userID = "updater";
-                    string password = "update";
+                    string userID = "fileshareftp";
+                    string password = "noeulfile1412!";
                     client.Credentials = new NetworkCredential(userID, password);
                     client.DownloadFile(ftpPath, targetPath);
                     System.Threading.Thread.Sleep(100);
                     ZipFile.ExtractToDirectory($@"{programpath}\SCSA.zip", programpath);
-                    client.DownloadFile("JSON Server 1", "version.json");
+                    client.DownloadFile("https://api.myjson.com/bins/uetg0", "version.json");
                 }
             }
             catch { }

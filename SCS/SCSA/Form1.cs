@@ -27,7 +27,7 @@ namespace SCSA
                 try
                 {
                     WebClient client = new WebClient();
-                    string download = client.DownloadString("Text Server 1");
+                    string download = client.DownloadString("http://2019swag.iptime.org:1234/api/imgJson/2/3");
                     string[] split = download.Split(';');
                     if (split.Length == 1)
                     {

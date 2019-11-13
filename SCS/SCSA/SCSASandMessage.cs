@@ -20,11 +20,11 @@ namespace SCSA
         private void button1_Click(object sender, EventArgs e)
         {
             WebClient client = new WebClient();
-            JObject setting = JObject.Parse(client.DownloadString("JSON Server 2"));
+            JObject setting = JObject.Parse(client.DownloadString("https://api.myjson.com/bins/t8642"));
             setting["havemessage"] = true;
             setting["message"] = textBox1.Text;
             client.Headers.Add("Content-Type", "application/json");
-            client.UploadString("JSON Server 2","PUT",setting.ToString());
+            client.UploadString("https://api.myjson.com/bins/t8642","PUT",setting.ToString());
             Close();
         }
     }
