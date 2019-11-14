@@ -85,7 +85,7 @@ app.get('/api/macJson/:mac', (req, res) => {
   console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
   if (!macData[mac]) res.send('Fail')
-  else res.send(macData[mac])
+  else res.send([macData[mac].imgJson, macData[mac].mgrJson].join(';'))
 })
 
 app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
