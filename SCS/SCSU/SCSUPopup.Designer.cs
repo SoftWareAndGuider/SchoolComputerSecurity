@@ -148,7 +148,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(55, 31);
             this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "01";
+            this.textBox2.Text = "1";
             // 
             // SCSUPopup
             // 

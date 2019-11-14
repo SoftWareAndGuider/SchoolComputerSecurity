@@ -16,8 +16,7 @@ namespace SCSU
         private void button1_Click(object sender, EventArgs e)
         {
             WebClient client = new WebClient();
-            string url = "http://2019swag.iptime.org/api/macJson";
-            JObject macadress = JObject.Parse(client.DownloadString(url));
+            string url = "http://2019swag.iptime.org:1234/api/macJson";
             string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
             client.DownloadString($"{url}/{textBox1.Text}/{textBox2.Text}/{mac}");
             Close();
@@ -27,6 +26,7 @@ namespace SCSU
         {
             int text = int.Parse(textBox1.Text);
             text++;
+            textBox1.Text = text.ToString();
             if (textBox1.Text == "4")
             {
                 textBox1.Text = "1";
@@ -48,14 +48,7 @@ namespace SCSU
         {
             int text = int.Parse(textBox2.Text);
             text++;
-            if (text > 9)
-            {
-                textBox2.Text = text.ToString();
-            }
-            else
-            {
-                textBox2.Text = "0" + text.ToString();
-            }
+            textBox2.Text = text.ToString();
             if (textBox2.Text == "13")
             {
                 textBox2.Text = "01";
@@ -66,15 +59,8 @@ namespace SCSU
         {
             int text = int.Parse(textBox2.Text);
             text--;
-            if (text > 9)
-            {
-                textBox2.Text = text.ToString();
-            }
-            else
-            {
-                textBox2.Text = "0" + text.ToString();
-            }
-            if (textBox2.Text == "00")
+            textBox2.Text = text.ToString();
+            if (textBox2.Text == "0")
             {
                 textBox2.Text = "12";
             }

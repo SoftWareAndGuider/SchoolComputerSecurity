@@ -140,7 +140,6 @@ namespace SCSU
                 string[] toUrl = macadress.Split(';');
                 captureText = toUrl[0];
                 settingJson = toUrl[1];
-                captureText = "";
                 Thread thread = new Thread(new ThreadStart(loop));
                 thread.Start();
             }
