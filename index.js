@@ -100,6 +100,12 @@ app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
 })
 // }
 
+// Auth {
+app.get('/api/auth/:grade/:room/:password', (req, res) => {
+  
+})
+// }
+
 // 포트에서 값을 읽어옴 {
 app.listen(PORT, () => {
   console.log(chalk.black.bgYellow('School Computer Security Server is now on http://localhost:') + chalk.black.bgYellow.bold(PORT))

@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.js" integrity="sha256-bbNosz5JlGdezcH8vxdbJ+b/hVKQTTRxrb+kM13pxc0=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1213a7cbad.js" crossorigin="anonymous"></script>
     <script src="https://raw.githubusercontent.com/github/fetch/master/fetch.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
@@ -23,7 +24,7 @@
     <div class="container-fluid">
       <div class="text-white text-center toptext">
         <h1>
-          장곡중학교 학급내 정보화기기 관리 페이지 <i class="fas fa-desktop"></i>
+          장곡중학교 학급 내 정보화기기 관리 페이지 <i class="fas fa-desktop"></i>
         </h1>
         <hr class="bg-light" />
         <div class="alertZone">
@@ -31,13 +32,13 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <strong>잠깐만요!</strong> 아직 이 서비스는 <span class="badge badge-danger">Beta</span> 버전입니다! 기능이 불안정할 수 도 있으니 양해부탁드립니다
+            <strong>잠깐만요!</strong> 아직 이 서비스는 <span class="badge badge-danger">Beta</span> 버전입니다! 기능이 불안정할 수 도 있으니 양해 부탁드립니다
           </div>
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <i class="fas fa-info-circle"></i> <strong>잠깐만요!</strong> 기능이 작동하지 않거나 맞춤법, 문법 오류 등을 발견했다면<br />2학년 1반 임태현, 2반 박민혁, 3반 배재현을 불러주세요!
+            <i class="fas fa-info-circle"></i> <strong>잠깐만요!</strong> 기능이 작동하지 않거나 맞춤법, 문법 오류 등을 발견했다면 <br />2학년 1반 임태현, 2반 박민혁, 3반 배재현을 불러주세요!
           </div>
         </div>
       </div>
@@ -63,8 +64,8 @@
       </div>
       <div class="fixed-bottom text-white text-center copyright">
         <h6>
-          Copyright <i class="fas fa-copyright"></i> 2019~2020. 장곡중학교(칠곡) - Software And Guiders, MIT Licensed.<br />
-          모든 저작권은 (칠곡)장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다<br />
+          Copyright <i class="fas fa-copyright"></i> 2019~2020. 장곡중학교(칠곡) - Software And Guiders, MIT Licensed. <br /> 
+          모든 저작권은 (칠곡) 장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다 <br /> 
           이 소프트웨어 및 웹페이지, 서버는 장곡중학교(칠곡) 교사님들의 의견을 반영하여 제작되었습니다 <i class="fas fa-heart"></i> 
         </h6>
       </div>
@@ -88,7 +89,7 @@
                     <option value="<%- c %>">2학년 <%= c %>반</option>
                   <% } %>
                 </select>
-                <small class="form-text text-muted">문제가 생기지 않도록 최대한 다른 반에 접속하지 말아주세요.</small>
+                <small class="form-text text-muted">문제가 생기지 않도록 최대한 다른 반에 접속하지 말아 주세요.</small>
               </div>
               <div class="form-group">
                 <label for="tgpw">접속 비밀번호</label>
@@ -98,7 +99,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> 취소</button>
-              <button type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> 이동!</button>
+              <button type="button" class="btn btn-primary" onclick="goAuth()"><i class="fas fa-sign-in-alt"></i> 이동!</button>
             </div>
           </div>
         </div>
@@ -164,6 +165,11 @@
     </style>
 
     <script>
+      function goAuth () {
+        const tgroom = document.getElementById('tgroom'), tgpw = document.getElementById('tgpw')
+        fetch('/api/auth/2/' + tgroom.value + '/' + sha256(tgpw.value))
+      }
+
       $(document).ready(() => {
         $('[rel="tooltip"]').tooltip({trigger: "hover"});
       })
