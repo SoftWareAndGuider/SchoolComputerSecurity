@@ -3,14 +3,18 @@ const PORT = process.env.scsToken || 1234
 const ejs = require('ejs')
 const cors = require('cors')
 const path = require('path').resolve()
+const uuid = require('uuid/v4')
 const chalk = require('chalk')
+const sha256 = require('js-sha256')
 const express = require('express')
 
-const imgData = [[], [], []]
-const offlineSW = [[], [], []]
-const mgrData = [[], [], []]
-const macData = {}
 const app = express()
+const auths = []
+const macData = {}
+const imgData = [[], [], []]
+const mgrData = [[], [], []]
+const offlineSW = [[], [], []]
+
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
 
@@ -101,8 +105,14 @@ app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
 // }
 
 // Auth {
-app.get('/api/auth/:grade/:room/:password', (req, res) => {
+app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
+  const { grade, room, passwd } = req.params
+
   
+
+  const id = uuid()
+  auths[auths.length] = id
+  res.redirect('/grade' + grade + '/room' + room + '/' + id)
 })
 // }
 
