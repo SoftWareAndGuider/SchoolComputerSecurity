@@ -167,7 +167,19 @@
     <script>
       function goAuth () {
         const tgroom = document.getElementById('tgroom'), tgpw = document.getElementById('tgpw')
-        fetch('/api/auth/2/' + tgroom.value + '/' + sha256(tgpw.value))
+        fetch('/api/auth/genUUID/2/' + tgroom.value + '/' + sha256(tgpw.value)).then((res) => {
+          res.json().then((v) => {
+            if (v.correct) {
+              window.location.replace(v.path)
+            } else {
+              tgpw.value = ''
+              tgpw.style.backgroundColor = 'lightpink'
+              setTimeout(() => {
+                tgpw.style.backgroundColor = 'white'
+              }, 1000)
+            }
+          })
+        })
       }
 
       $(document).ready(() => {

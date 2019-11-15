@@ -1,19 +1,25 @@
 const PORT = process.env.scsToken || 1234
 
+const fs = require('fs')
 const ejs = require('ejs')
 const cors = require('cors')
 const path = require('path').resolve()
 const uuid = require('uuid/v4')
 const chalk = require('chalk')
-const sha256 = require('js-sha256')
 const express = require('express')
+const { JsonFile } = require('jsonque')
+const hashCrypto = require('./hashCrypto')
+if (!hashCrypto) throw new Error('Crypyo JS File is not Exist at ' + path + '/hashCrypto.js')
+
+if (!fs.existsSync(path + '/data/')) fs.mkdirSync(path + '/data')
 
 const app = express()
 const auths = []
-const macData = {}
 const imgData = [[], [], []]
 const mgrData = [[], [], []]
 const offlineSW = [[], [], []]
+const macData = new JsonFile(path + '/data/macJson.json')
+macData.read((str) => { if (!str) macData.write([]) })
 
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
@@ -88,19 +94,26 @@ app.get('/api/macJson/:mac', (req, res) => {
   const { mac } = req.params
   console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
-  if (!macData[mac]) res.send('Fail')
-  else res.send([macData[mac].imgJson, macData[mac].mgrJson].join(';'))
+  macData.read((macs) => {
+    if (!macs[mac]) res.send('Fail')
+    else res.send([macs[mac].imgJson, macs[mac].mgrJson].join(';'))
+  })
 })
 
 app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
   const { grade, room, mac } = req.params
   console.log(chalk.bgGreen.black('[macPut] by ' + req.ip))
 
-  macData[mac] = {
-    imgJson: '/api/imgJson/' + grade + '/' + room,
-    mgrJson: '/api/mgrJson/' + grade + '/' + room
-  }
-  res.sendStatus(200)
+  macData.read((str) => {
+    if (!str[mac]) {
+      str[mac] = {
+        imgJson: '/api/imgJson/' + grade + '/' + room,
+        mgrJson: '/api/mgrJson/' + grade + '/' + room
+      }
+
+      macData.write(str, () => { res.sendStatus(200) })
+    } else res.sendStatus(200)
+  })
 })
 // }
 
@@ -108,11 +121,31 @@ app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
 app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
   const { grade, room, passwd } = req.params
 
-  
+  if (hashCrypto(grade, room, passwd)) {
+    const id = uuid()
+    auths[auths.length] = id
+    res.send({ correct: true, path: '/grade' + grade + '/room' + room + '/' + id })
+  } else {
+    res.send({ correct: false })
+  }
+})
+// }
 
-  const id = uuid()
-  auths[auths.length] = id
-  res.redirect('/grade' + grade + '/room' + room + '/' + id)
+// Viewer {
+app.get('/:grade/:room/:id', (req, res) => {
+  let { grade, room, id } = req.params
+
+  grade = grade.replace('grade', '')
+  room = room.replace('room', '')
+
+  if (auths.includes(id)) {
+    const newid = uuid()
+    auths[auths.indexOf(id)] = newid
+    ejs.renderFile(path + '/view/viewer.ejs', { grade, room, id }, (err, str) => {
+      if (err) console.log(err)
+      res.send(str)
+    })
+  } else res.redirect('/view')
 })
 // }
 
