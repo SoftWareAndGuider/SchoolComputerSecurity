@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>장곡컴 - <%= grade %>학년 <%= room %>반</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1213a7cbad.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <script src='http://js.zapjs.com/js/download.js'></script>
+  </head>
+  <body>
+
+    <div class="bg bg-dark">
+      <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center" style="margin-top: 40vh">
+          <h1 class="text-white">로딩중...</h1>
+          <div style="margin-left: 10px;" class="spinner-border text-light" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom text-white">
+      <a class="navbar-brand" onclick="refresh()"><%= grade %>학년 <%= room %>반</a>
+      <div class="my-2 my-lg-0">
+        <button type="button" class="btn btn-primary" onclick="capture()"><i class="fas fa-camera"></i> 화면 찍기</button>
+        <button type="button" class="btn btn-info"><i class="fas fa-exclamation"></i> 메세지 보내기</button>
+        <button type="button" class="btn btn-danger"><i class="fas fa-power-off"></i> 컴퓨터 끄기</button>
+        <button type="button" class="btn btn-success"><i class="fas fa-redo"></i> 컴퓨터 재시작</button>
+        <button type="button" class="btn btn-warning text-white"><i class="fas fa-bolt"></i> 절전 모드</button>
+        <button type="button" class="btn btn-secondary"><i class="fas fa-ellipsis-h"></i></button>
+      </div>
+    </nav>
+
+    <img class="render" onclick="openMenu()">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
+      
+      * {
+        font-family: 'Jua', sans-serif;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      .bg {
+        height: 100vh;
+      }
+
+      .btn-circle {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        padding: 0;
+        border-radius: 50%;
+      }
+
+      .render {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1040;
+      }
+
+      .btn-tool {
+        border-color: #00000000;
+        position: absolute;
+        bottom: 8%;
+        width: 70px;
+        height: 70px;
+        box-shadow: 1px 1px 4px #000000;
+      }
+
+      .btn-circle i {
+        position: relative;
+        top: -1px;
+      }
+    </style>
+
+    <script>
+      let menuSw = false
+
+      function openMenu () {
+        if (menuSw) {
+          menuSw = false
+          anime({ easing: 'easeInOutQuint', duration: 300, targets: '.render', translateY: 0 })
+        } else {
+          menuSw = true
+          anime({ easing: 'easeInOutQuint', duration: 300, targets: '.render', translateY: -55 })
+        }
+      }
+
+      function refresh () {
+        window.location.replace(`<%= '/grade' + grade + '/room' + room + '/' + newid %>`)
+      }
+
+      function capture () {
+        fetch('/api/imgJson/<%= grade %>/<%= room %>').then((res) => {
+          res.text().then((str) => {
+            str = str.split(';')
+            download('data:application/octet-stream;base64,' + str[0], '<%= grade %>학년 <%= room %>반.png', 'application/octet-stream;base64');
+          })
+        })
+      }
+
+      setInterval(() => {
+        for (let room = 1; room < 4; room++) {
+          fetch('/api/imgJson/<%= grade %>/<%= room %>').then((res) => {
+            res.text().then((str) => {
+              str = str.split(';')
+              if (str[0] === '') {
+                document.getElementsByClassName('render')[0].setAttribute('src', 'https://ak4.picdn.net/shutterstock/videos/1011406034/thumb/1.jpg')
+              } else {
+                document.getElementsByClassName('render')[0].setAttribute('src', 'data:image/png;base64, ' + str[0])
+              }
+            })
+          })
+        }
+      }, 200)
+    </script>
+  </body>
+</html>

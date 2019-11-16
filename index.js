@@ -9,7 +9,6 @@ const chalk = require('chalk')
 const express = require('express')
 const { JsonFile } = require('jsonque')
 const hashCrypto = require('./hashCrypto')
-if (!hashCrypto) throw new Error('Crypyo JS File is not Exist at ' + path + '/hashCrypto.js')
 
 if (!fs.existsSync(path + '/data/')) fs.mkdirSync(path + '/data')
 
@@ -141,7 +140,7 @@ app.get('/:grade/:room/:id', (req, res) => {
   if (auths.includes(id)) {
     const newid = uuid()
     auths[auths.indexOf(id)] = newid
-    ejs.renderFile(path + '/view/viewer.ejs', { grade, room, id }, (err, str) => {
+    ejs.renderFile(path + '/view/viewer.ejs', { grade, room, newid }, (err, str) => {
       if (err) console.log(err)
       res.send(str)
     })
