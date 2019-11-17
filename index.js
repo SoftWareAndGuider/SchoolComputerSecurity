@@ -86,6 +86,48 @@ app.put('/api/mgrJson/:grade/:room', (req, res) => {
   res.sendStatus(200)
 })
 
+app.get('/api/mgrJson/:grade/:room/:proc', (req, res) => {
+  const { grade, room, proc } = req.params
+  console.log(chalk.bgBlue.black('[mgrGet] ' + grade + '-' + room + ' by ' + req.ip))
+
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+
+  switch (proc) {
+    case 'shutdown':
+      mgrData[grade][room][0] = true
+      res.sendStatus(200)
+      break
+
+    case 'restart':
+      mgrData[grade][room][1] = true
+      res.sendStatus(200)
+      break
+
+    case 'powerSave':
+      mgrData[grade][room][2] = true
+      res.sendStatus(200)
+      break
+
+    default:
+      res.sendStatus(404)
+      break
+  }
+})
+
+// }
+
+// Message {
+app.get('/api/msgJson/:grade/:room/:message', (req, res) => {
+  const { grade, room, message } = req.params
+  console.log(chalk.bgBlue.black('[msgGet] ' + grade + '-' + room + ' by ' + req.ip))
+
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+
+  mgrData[grade][room][3] = true
+  mgrData[grade][room][4] = message
+
+  res.sendStatus(200)
+})
 // }
 
 // Mac Address {

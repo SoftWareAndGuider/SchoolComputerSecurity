@@ -11,11 +11,28 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha256-c+C87jupO1otD1I5uyxV68WmSLCqtIoNlcHLXtzLCT0=" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/1213a7cbad.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
     <script src='http://js.zapjs.com/js/download.js'></script>
   </head>
   <body>
+
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        화면을 클릭하면 관리도구를 열고 닫을 수 있어요!
+      </div>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+      </button>
+      모든 저작권은 (칠곡) 장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다
+    </div>
 
     <div class="bg bg-dark">
       <div class="container h-100">
@@ -29,18 +46,61 @@
     </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom text-white">
-      <a class="navbar-brand" onclick="refresh()"><%= grade %>학년 <%= room %>반</a>
+      <a class="navbar-brand" onclick="refresh()"><%= grade %>학년 <%= room %>반 <i class="fas fa-tools"></i></a>
       <div class="my-2 my-lg-0">
-        <button type="button" class="btn btn-primary" onclick="capture()"><i class="fas fa-camera"></i> 화면 찍기</button>
-        <button type="button" class="btn btn-info"><i class="fas fa-exclamation"></i> 메세지 보내기</button>
-        <button type="button" class="btn btn-danger"><i class="fas fa-power-off"></i> 컴퓨터 끄기</button>
-        <button type="button" class="btn btn-success"><i class="fas fa-redo"></i> 컴퓨터 재시작</button>
-        <button type="button" class="btn btn-warning text-white"><i class="fas fa-bolt"></i> 절전 모드</button>
-        <button type="button" class="btn btn-secondary"><i class="fas fa-ellipsis-h"></i></button>
+        <button type="button" class="btn btn-primary hvr-grow-rotate" onclick="capture()"><i class="fas fa-camera"></i> 화면 찍기</button>
+        <button type="button" class="btn btn-secondary hvr-buzz-out" rel="tooltip" data-placement="top" title="아직 지원되지 않는 기능입니다!""><i class="fas fa-exclamation"></i> 메세지 보내기</button>
+        <button type="button" class="btn btn-danger hvr-grow-rotate" data-toggle="modal" data-target="#shutdownModal"><i class="fas fa-power-off"></i> 컴퓨터 끄기</button>
+        <button type="button" class="btn btn-success hvr-grow-rotate" data-toggle="modal" data-target="#restartModal"><i class="fas fa-redo"></i> 컴퓨터 재시작</button>
+        <button type="button" class="btn btn-warning text-white hvr-grow-rotate" onclick="fetch('/api/mgrJson/<%= grade %>/<%= room %>/powerSave')"><i class="fas fa-bolt"></i> 절전 모드</button>
       </div>
     </nav>
 
     <img class="render" onclick="openMenu()">
+
+    <!-- Modal -->
+    <div class="modal fade" id="shutdownModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">정말 원격 종료하시겠습니까?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <%= grade %>학년 <%= room %>반의 컴퓨터를 종료합니다<br />
+            계속하시겠습니까?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary hvr-icon-back" data-dismiss="modal"><i class="fas fa-backspace hvr-icon"></i> 돌아가기</button>
+            <button type="button" class="btn btn-danger hvr-icon-wobble-horizontal" onclick="shutdown()">계속 <i class="fas fa-arrow-right hvr-icon"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="restartModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">정말 원격 재시작하시겠습니까?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <%= grade %>학년 <%= room %>반의 컴퓨터를 재시작합니다<br />
+              계속하시겠습니까?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary hvr-icon-back" data-dismiss="modal"><i class="fas fa-backspace hvr-icon"></i> 돌아가기</button>
+              <button type="button" class="btn btn-success hvr-icon-wobble-horizontal" onclick="restart()">계속 <i class="fas fa-arrow-right hvr-icon"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <style>
       @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
@@ -55,6 +115,22 @@
 
       .bg {
         height: 100vh;
+      }
+
+      .alert-warning {
+        position: absolute;
+        background-color: #fff3cdd0;
+        border-color: #fff3cdd0;
+        top: 5px;
+        left: 3px;
+      }
+
+      .alert-info {
+        position: absolute;
+        background-color: #d1ecf1d0;
+        border-color: #d1ecf1d0;
+        top: 60px;
+        left: 3px;
       }
 
       .btn-circle {
@@ -75,6 +151,10 @@
         z-index: 1040;
       }
 
+      .alert {
+        z-index: 1050;
+      }
+
       .btn-tool {
         border-color: #00000000;
         position: absolute;
@@ -91,6 +171,10 @@
     </style>
 
     <script>
+      $(document).ready(() => {
+        $('[rel="tooltip"]').tooltip({trigger: "hover"});
+      })
+
       let menuSw = false
 
       function openMenu () {
@@ -113,6 +197,19 @@
             str = str.split(';')
             download('data:application/octet-stream;base64,' + str[0], '<%= grade %>학년 <%= room %>반.png', 'application/octet-stream;base64');
           })
+        })
+      }
+
+      function shutdown () {
+        fetch('/api/mgrJson/<%= grade %>/<%= room %>/shutdown').then(() => {
+          $('.modal').modal('hide')
+        })
+      }
+
+
+      function restart () {
+        fetch('/api/mgrJson/<%= grade %>/<%= room %>/restart').then(() => {
+          $('.modal').modal('hide')
         })
       }
 
