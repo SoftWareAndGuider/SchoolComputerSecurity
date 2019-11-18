@@ -7,18 +7,17 @@ const path = require('path').resolve()
 const uuid = require('uuid/v4')
 const chalk = require('chalk')
 const express = require('express')
-const { JsonFile } = require('jsonque')
 const hashCrypto = require('./hashCrypto')
 
 if (!fs.existsSync(path + '/data/')) fs.mkdirSync(path + '/data')
+if (!fs.existsSync(path + '/data/macJson.json')) fs.mkdirSync(path + '/data/macJson.json')
+const macData = require(path + '/data/macJson.json')
 
 const app = express()
 const auths = []
 const imgData = [[], [], []]
 const mgrData = [[], [], []]
 const offlineSW = [[], [], []]
-const macData = new JsonFile(path + '/data/macJson.json')
-macData.read((str) => { if (!str) macData.write([]) })
 
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
@@ -135,26 +134,25 @@ app.get('/api/macJson/:mac', (req, res) => {
   const { mac } = req.params
   console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
-  macData.read((macs) => {
-    if (!macs[mac]) res.send('Fail')
-    else res.send([macs[mac].imgJson, macs[mac].mgrJson].join(';'))
-  })
+  if (!macData[mac]) res.send('Fail')
+  else res.send([macData[mac].imgJson, macData[mac].mgrJson].join(';'))
 })
 
 app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
   const { grade, room, mac } = req.params
   console.log(chalk.bgGreen.black('[macPut] by ' + req.ip))
 
-  macData.read((str) => {
-    if (!str[mac]) {
-      str[mac] = {
-        imgJson: '/api/imgJson/' + grade + '/' + room,
-        mgrJson: '/api/mgrJson/' + grade + '/' + room
-      }
+  if (!macData[mac]) {
+    macData[mac] = {
+      imgJson: '/api/imgJson/' + grade + '/' + room,
+      mgrJson: '/api/mgrJson/' + grade + '/' + room
+    }
 
-      macData.write(str, () => { res.sendStatus(200) })
-    } else res.sendStatus(200)
-  })
+    fs.writeFile(path + '/data/macJson.json', JSON.stringify(macData), (err) => {
+      if (err) console.log(err)
+      else res.sendStatus(200)
+    })
+  } else res.sendStatus(200)
 })
 // }
 
