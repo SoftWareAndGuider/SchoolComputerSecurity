@@ -10,7 +10,7 @@ const express = require('express')
 const hashCrypto = require('./hashCrypto')
 
 if (!fs.existsSync(path + '/data/')) fs.mkdirSync(path + '/data')
-if (!fs.existsSync(path + '/data/macJson.json')) fs.mkdirSync(path + '/data/macJson.json')
+if (!fs.existsSync(path + '/data/macJson.json')) fs.writeFileSync(path + '/data/macJson.json', '[]')
 const macData = require(path + '/data/macJson.json')
 
 const app = express()
@@ -120,7 +120,7 @@ app.get('/api/msgJson/:grade/:room/:message', (req, res) => {
   const { grade, room, message } = req.params
   console.log(chalk.bgBlue.black('[msgGet] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', mgrData[grade][room][5], mgrData[grade][room][6]]
 
   mgrData[grade][room][3] = true
   mgrData[grade][room][4] = message
@@ -135,7 +135,7 @@ app.get('/api/macJson/:mac', (req, res) => {
   console.log(chalk.bgBlue.black('[macGet] by' + req.ip))
 
   if (!macData[mac]) res.send('Fail')
-  else res.send([macData[mac].imgJson, macData[mac].mgrJson].join(';'))
+  else res.send([macData[mac].imgJson, macData[mac].mgrJson, macData[mac].msgJson].join(';'))
 })
 
 app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
@@ -145,7 +145,8 @@ app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
   if (!macData[mac]) {
     macData[mac] = {
       imgJson: '/api/imgJson/' + grade + '/' + room,
-      mgrJson: '/api/mgrJson/' + grade + '/' + room
+      mgrJson: '/api/mgrJson/' + grade + '/' + room,
+      msgJson: '/api/msgJson/' + grade + '/' + room
     }
 
     fs.writeFile(path + '/data/macJson.json', JSON.stringify(macData), (err) => {
