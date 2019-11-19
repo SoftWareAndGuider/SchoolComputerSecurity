@@ -25,3 +25,12 @@ G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Reso
 G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
 G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
 G:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
+C:\Users\배재현\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb

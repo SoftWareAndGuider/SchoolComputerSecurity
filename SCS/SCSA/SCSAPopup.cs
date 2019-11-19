@@ -1,26 +1,15 @@
 ﻿using System;
 using System.Net;
-using Newtonsoft.Json.Linq;
-using System.Windows.Forms;
 using System.Net.NetworkInformation;
+using System.Windows.Forms;
 
-namespace SCSU
+namespace SCSA
 {
-    public partial class SCSUPopup : Form
+    public partial class SCSAPopup : Form
     {
-        public SCSUPopup()
+        public SCSAPopup()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            WebClient client = new WebClient();
-            string url = "http://2019swag.iptime.org:1234/api/macJson";
-            string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
-            //textBox1.Text = 학년, textBox2.Text = 반
-            client.DownloadString($"{url}/{textBox1.Text}/{textBox2.Text}/{mac}");
-            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,6 +54,18 @@ namespace SCSU
             {
                 textBox2.Text = "12";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WebClient client = new WebClient();
+            string[] url = new string[2]
+            {
+                $"http://2019swag.iptime.org:1234/api/imgJson/{textBox1.Text}/{textBox2.Text}",
+                $"http://2019swag.iptime.org:1234/api/mgrJson/{textBox1.Text}/{textBox2.Text}"
+            };
+            System.IO.File.WriteAllLines("url.txt",url);
+            Close();
         }
     }
 }

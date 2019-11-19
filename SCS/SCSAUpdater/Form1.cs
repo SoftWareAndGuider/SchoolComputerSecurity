@@ -22,11 +22,11 @@ namespace SCSAUpdater
                 WebClient client = new WebClient();
                 if (client.DownloadString("https://api.myjson.com/bins/uetg0") != File.ReadAllText("version.json"))
                 {
-                    string programpath = @"..\Program";
+                    string programpath = @"Program";
                     Directory.Delete(programpath, true);
                     Directory.CreateDirectory(programpath);
-                    string ftpPath = "ftp://server.noeul.xyz";
-                    string targetPath = @"..\Program\SCSA.zip";
+                    string ftpPath = "ftp://server.noeul.xyz/fileshare/SCS/SCSA.zip";
+                    string targetPath = @"Program\SCSA.zip";
                     string userID = "fileshareftp";
                     string password = "noeulfile1412!";
                     client.Credentials = new NetworkCredential(userID, password);
@@ -37,7 +37,7 @@ namespace SCSAUpdater
                 }
             }
             catch { }
-            System.Diagnostics.Process.Start(@"..\Program\SCSA.exe");
+            System.Diagnostics.Process.Start(@"Program\SCSA.exe");
             Application.Exit();
         }
     }

@@ -45,6 +45,8 @@
             this.모니터보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.번모니터ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.번모니터ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.사진찍기개발중ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +68,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.컴퓨터관리ToolStripMenuItem,
             this.메세지전송ToolStripMenuItem,
-            this.모니터보기ToolStripMenuItem});
+            this.모니터보기ToolStripMenuItem,
+            this.사진찍기개발중ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -177,16 +180,23 @@
             this.번모니터ToolStripMenuItem.Checked = true;
             this.번모니터ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.번모니터ToolStripMenuItem.Name = "번모니터ToolStripMenuItem";
-            this.번모니터ToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.번모니터ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.번모니터ToolStripMenuItem.Text = "1번 모니터";
             this.번모니터ToolStripMenuItem.Click += new System.EventHandler(this.번모니터ToolStripMenuItem_Click);
             // 
             // 번모니터ToolStripMenuItem1
             // 
             this.번모니터ToolStripMenuItem1.Name = "번모니터ToolStripMenuItem1";
-            this.번모니터ToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.번모니터ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.번모니터ToolStripMenuItem1.Text = "2번 모니터";
             this.번모니터ToolStripMenuItem1.Click += new System.EventHandler(this.번모니터ToolStripMenuItem1_Click);
+            // 
+            // 사진찍기개발중ToolStripMenuItem
+            // 
+            this.사진찍기개발중ToolStripMenuItem.Name = "사진찍기개발중ToolStripMenuItem";
+            this.사진찍기개발중ToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.사진찍기개발중ToolStripMenuItem.Text = "사진 찍기 (개발중...)";
+            this.사진찍기개발중ToolStripMenuItem.Click += new System.EventHandler(this.사진찍기개발중ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -225,6 +235,8 @@
         private System.Windows.Forms.ToolStripMenuItem cmd금지ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 금지ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 허용ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 사진찍기개발중ToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

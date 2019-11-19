@@ -36,3 +36,4 @@ C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csproj.GenerateResource.cache
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csproj.CopyComplete
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.exe
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.pdb
+C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.SCSAPopup.resources
