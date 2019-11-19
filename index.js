@@ -142,7 +142,7 @@ app.get('/api/macJson/:mac', (req, res) => {
 
 app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
   const { grade, room, mac } = req.params
-  console.log(chalk.bgGreen.black('[macPut] by ' + req.ip))
+  console.log(chalk.bgGreen.black('[macPut] ' + grade + '-' + room + ' by ' + req.ip))
 
   if (!macData[mac]) {
     macData[mac] = {
@@ -162,7 +162,7 @@ app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
 // Auth {
 app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
   const { grade, room, passwd } = req.params
-  console.log(chalk.bgMagenta.black('[uidReq] by ' + req.ip))
+  console.log(chalk.bgMagenta.black('[uidReq] ' + grade + '-' + room + ' by ' + req.ip))
 
   if (hashCrypto(grade, room, passwd)) {
     const id = uuid()
@@ -179,7 +179,7 @@ app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
 // Viewer {
 app.get('/:grade/:room/:id', (req, res) => {
   let { grade, room, id } = req.params
-  console.log(chalk.bgBlue.black('[webGet] by ' + req.ip + ' from ' + id))
+  console.log(chalk.bgBlue.black('[webGet] ' + grade + '-' + room + ' by ' + req.ip + ' from ' + id))
 
   grade = grade.replace('grade', '')
   room = room.replace('room', '')
