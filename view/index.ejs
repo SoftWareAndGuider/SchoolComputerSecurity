@@ -45,7 +45,7 @@
       </div>
       <div class="row relative text-center">
         <div class="col-lg-3">
-          <button class="btn gradeBtn btn-danger text-white text-center hvr-icon-up" rel="tooltip" data-placement="top" data-html="true" title="1학년은 아직 지원하지 않아요! <br />잠시만 기다려 주세요!">
+          <button class="btn gradeBtn btn-danger text-white text-center hvr-icon-up" rel="tooltip" data-placement="top" data-html="true" data-toggle="modal" data-target="#grade1Connect" title="여기를 눌러<br />관리도구로 이동합니다!">
             <h1><i class="fas fa-user hvr-icon"></i></h1>
             <h5 class="card-title">1학년</h5>
           </button>
@@ -57,7 +57,7 @@
           </button>
         </div>
         <div class="col-lg-3">
-          <button class="btn gradeBtn btn-success text-white text-center hvr-icon-up" rel="tooltip" data-placement="top" data-html="true" title="3학년은 아직 지원하지 않아요! <br />잠시만 기다려 주세요!">
+          <button class="btn gradeBtn btn-success text-white text-center hvr-icon-up" rel="tooltip" data-placement="top" data-html="true" data-toggle="modal" data-target="#grade3Connect" title="여기를 눌러<br />관리도구로 이동합니다!">
             <h1><i class="fas fa-users hvr-icon"></i></h1>
             <h5 class="card-title">3학년</h5>
           </button>
@@ -69,6 +69,40 @@
           모든 저작권은 (칠곡) 장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다 <br /> 
           이 소프트웨어 및 웹페이지, 서버는 장곡중학교(칠곡) 교사님들의 의견을 반영하여 제작되었습니다 <i class="fas fa-heart"></i> 
         </h6>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="grade1Connect" tabindex="-1" role="dialog" aria-labelledby="grade1ConnectLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="grade1ConnectLabel">1학년 관리 서버 접속</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="tgroom">접속할 반</label>
+              <select class="form-control" id="tgroom1">
+                <% for (let c = 1; c < 13; c++) { %>
+                  <option value="<%- c %>">1학년 <%= c %>반</option>
+                <% } %>
+              </select>
+              <small class="form-text text-muted">문제가 생기지 않도록 최대한 다른 반에 접속하지 말아 주세요.</small>
+            </div>
+            <div class="form-group">
+              <label for="tgpw">접속 비밀번호</label>
+              <input type="password" class="form-control" id="tgpw1" placeholder="비밀번호를 여기 적어주세요">
+              <small class="form-text text-muted">접속할 반에 따라 비밀번호가 달라집니다.</small>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary hvr-icon-buzz-out" data-dismiss="modal"><i class="fas fa-backspace hvr-icon"></i> 취소</button>
+            <button type="button" class="btn btn-primary hvr-icon-wobble-horizontal" onclick="goAuth(1)"><i class="fas fa-sign-in-alt hvr-icon"></i> 이동!</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -85,7 +119,7 @@
             <div class="modal-body">
               <div class="form-group">
                 <label for="tgroom">접속할 반</label>
-                <select class="form-control" id="tgroom">
+                <select class="form-control" id="tgroom2">
                   <% for (let c = 1; c < 13; c++) { %>
                     <option value="<%- c %>">2학년 <%= c %>반</option>
                   <% } %>
@@ -94,17 +128,51 @@
               </div>
               <div class="form-group">
                 <label for="tgpw">접속 비밀번호</label>
-                <input type="password" class="form-control" id="tgpw" placeholder="비밀번호를 여기 적어주세요">
+                <input type="password" class="form-control" id="tgpw2" placeholder="비밀번호를 여기 적어주세요">
                 <small class="form-text text-muted">접속할 반에 따라 비밀번호가 달라집니다.</small>
               </div>  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary hvr-icon-buzz-out" data-dismiss="modal"><i class="fas fa-backspace hvr-icon"></i> 취소</button>
-              <button type="button" class="btn btn-primary hvr-icon-wobble-horizontal" onclick="goAuth()"><i class="fas fa-sign-in-alt hvr-icon"></i> 이동!</button>
+              <button type="button" class="btn btn-primary hvr-icon-wobble-horizontal" onclick="goAuth(2)"><i class="fas fa-sign-in-alt hvr-icon"></i> 이동!</button>
             </div>
           </div>
         </div>
       </div>
+
+          <!-- Modal -->
+    <div class="modal fade" id="grade3Connect" tabindex="-1" role="dialog" aria-labelledby="grade3ConnectLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="grade3ConnectLabel">3학년 관리 서버 접속</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="tgroom">접속할 반</label>
+              <select class="form-control" id="tgroom3">
+                <% for (let c = 1; c < 13; c++) { %>
+                  <option value="<%- c %>">3학년 <%= c %>반</option>
+                <% } %>
+              </select>
+              <small class="form-text text-muted">문제가 생기지 않도록 최대한 다른 반에 접속하지 말아 주세요.</small>
+            </div>
+            <div class="form-group">
+              <label for="tgpw">접속 비밀번호</label>
+              <input type="password" class="form-control" id="tgpw3" placeholder="비밀번호를 여기 적어주세요">
+              <small class="form-text text-muted">접속할 반에 따라 비밀번호가 달라집니다.</small>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary hvr-icon-buzz-out" data-dismiss="modal"><i class="fas fa-backspace hvr-icon"></i> 취소</button>
+            <button type="button" class="btn btn-primary hvr-icon-wobble-horizontal" onclick="goAuth(3)"><i class="fas fa-sign-in-alt hvr-icon"></i> 이동!</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
       
@@ -166,9 +234,9 @@
     </style>
 
     <script>
-      function goAuth () {
-        const tgroom = document.getElementById('tgroom'), tgpw = document.getElementById('tgpw')
-        fetch('/api/auth/genUUID/2/' + tgroom.value + '/' + sha256(tgpw.value)).then((res) => {
+      function goAuth (grade) {
+        const tgroom = document.getElementById('tgroom' + grade), tgpw = document.getElementById('tgpw' + grade)
+        fetch('/api/auth/genUUID/' + grade + '/' + tgroom.value + '/' + sha256(tgpw.value)).then((res) => {
           res.json().then((v) => {
             if (v.correct) {
               window.location.replace(v.path)

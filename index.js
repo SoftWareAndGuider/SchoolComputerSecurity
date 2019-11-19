@@ -15,19 +15,21 @@ const macData = require(path + '/data/macJson.json')
 
 const app = express()
 const auths = []
-const imgData = [[], [], []]
-const mgrData = [[], [], []]
-const offlineSW = [[], [], []]
+const imgData = [null, [], [], []]
+const mgrData = [null, [], [], []]
+const offlineSW = [null, [], [], []]
 
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
 
 setInterval(() => {
   imgData.forEach((grade, i1) => {
-    grade.forEach((_room, i2) => {
-      if (!offlineSW[i1][i2]) imgData[i1][i2] = ''
-      else offlineSW[i1][i2] = false
-    })
+    if (grade) {
+      grade.forEach((_room, i2) => {
+        if (!offlineSW[i1][i2]) imgData[i1][i2] = ''
+        else offlineSW[i1][i2] = false
+      })
+    }
   })
 }, 30000)
 
@@ -160,12 +162,15 @@ app.get('/api/macJson/:grade/:room/:mac', (req, res) => {
 // Auth {
 app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
   const { grade, room, passwd } = req.params
+  console.log(chalk.bgMagenta.black('[uidReq] by ' + req.ip))
 
   if (hashCrypto(grade, room, passwd)) {
     const id = uuid()
+    console.log(chalk.bgCyan.black('[uidGen] by ' + req.ip + ' to ' + id))
     auths[auths.length] = id
     res.send({ correct: true, path: '/grade' + grade + '/room' + room + '/' + id })
   } else {
+    console.log(chalk.bgRed.black('[uidNeg] by ' + req.ip))
     res.send({ correct: false })
   }
 })
@@ -174,6 +179,7 @@ app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
 // Viewer {
 app.get('/:grade/:room/:id', (req, res) => {
   let { grade, room, id } = req.params
+  console.log(chalk.bgBlue.black('[webGet] by ' + req.ip + ' from ' + id))
 
   grade = grade.replace('grade', '')
   room = room.replace('room', '')
@@ -181,11 +187,48 @@ app.get('/:grade/:room/:id', (req, res) => {
   if (auths.includes(id)) {
     const newid = uuid()
     auths[auths.indexOf(id)] = newid
+    console.log(chalk.bgCyan.black('[uidGen] by ' + req.ip + ' from ' + id + ' to ' + newid))
     ejs.renderFile(path + '/view/viewer.ejs', { grade, room, newid }, (err, str) => {
       if (err) console.log(err)
       res.send(str)
     })
-  } else res.redirect('/view')
+  } else {
+    console.log(chalk.bgRed.black('[uidNeg] by ' + req.ip))
+    res.redirect('/view')
+  }
+})
+// }
+
+// Debug {
+app.get('/raw/:require', (req, res) => {
+  const { request } = req.params
+  console.log(chalk.bgBlue.black('[rawGet] by ' + req.ip + ' at ' + request))
+
+  switch (request) {
+    case 'auths':
+      res.sendStatus(403)
+      break
+
+    case 'imgData':
+      res.send(imgData)
+      break
+
+    case 'mgrData':
+      res.send(mgrData)
+      break
+
+    case 'macData':
+      res.send(macData)
+      break
+
+    case 'offlineSW':
+      res.send(offlineSW)
+      break
+
+    default:
+      res.sendStatus(404)
+      break
+  }
 })
 // }
 
