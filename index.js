@@ -10,7 +10,7 @@ const express = require('express')
 const hashCrypto = require('./hashCrypto')
 
 if (!fs.existsSync(path + '/data/')) fs.mkdirSync(path + '/data')
-if (!fs.existsSync(path + '/data/macJson.json')) fs.writeFileSync(path + '/data/macJson.json', '[]')
+if (!fs.existsSync(path + '/data/macJson.json')) fs.writeFileSync(path + '/data/macJson.json', '{}')
 const macData = require(path + '/data/macJson.json')
 
 const app = express()
@@ -200,7 +200,7 @@ app.get('/:grade/:room/:id', (req, res) => {
 // }
 
 // Debug {
-app.get('/raw/:require', (req, res) => {
+app.get('/raw/:request', (req, res) => {
   const { request } = req.params
   console.log(chalk.bgBlue.black('[rawGet] by ' + req.ip + ' at ' + request))
 
