@@ -234,12 +234,16 @@
     </style>
 
     <script>
+      document.getElementById('tgpw1').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(1) })
+      document.getElementById('tgpw2').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(2) })
+      document.getElementById('tgpw3').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(3) })
+
       function goAuth (grade) {
         const tgroom = document.getElementById('tgroom' + grade), tgpw = document.getElementById('tgpw' + grade)
         fetch('/api/auth/genUUID/' + grade + '/' + tgroom.value + '/' + sha256(tgpw.value)).then((res) => {
           res.json().then((v) => {
             if (v.correct) {
-              window.location.replace(v.path)
+              window.open(v.path)
             } else {
               tgpw.value = ''
               tgpw.style.backgroundColor = 'lightpink'
