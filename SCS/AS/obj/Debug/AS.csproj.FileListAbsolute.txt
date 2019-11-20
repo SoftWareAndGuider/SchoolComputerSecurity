@@ -1,0 +1,9 @@
+G:\Users\배재현\Desktop\SCS\AS\bin\Debug\AS.exe.config
+G:\Users\배재현\Desktop\SCS\AS\bin\Debug\AS.exe
+G:\Users\배재현\Desktop\SCS\AS\bin\Debug\AS.pdb
+G:\Users\배재현\Desktop\SCS\AS\obj\Debug\AS.csprojAssemblyReference.cache
+G:\Users\배재현\Desktop\SCS\AS\obj\Debug\AS.Form1.resources
+G:\Users\배재현\Desktop\SCS\AS\obj\Debug\AS.Properties.Resources.resources
+G:\Users\배재현\Desktop\SCS\AS\obj\Debug\AS.csproj.GenerateResource.cache
+G:\Users\배재현\Desktop\SCS\AS\obj\Debug\AS.exe
+G:\Users\배재현\Desktop\SCS\AS\obj\Debug\AS.pdb

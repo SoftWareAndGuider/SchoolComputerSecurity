@@ -7,14 +7,17 @@ using System.Drawing;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using System.Text;
+using System.Drawing.Imaging;
 
 namespace SCSA
 {
     public partial class Form1 : Form
     {
+        int timer = 0;
+        string backup;
         bool looping = true;
         int monitor = 1;
-        string image, mgr;
+        string image, mgr, msg;
         string mac;
         Bitmap bitmap;
         public Form1()
@@ -26,8 +29,8 @@ namespace SCSA
             {
                 string[] split = File.ReadAllLines("url.txt");
                 image = $"{split[0]}";
-                MessageBox.Show(image);
                 mgr = $"{split[1]}";
+                msg = $"{split[2]}";
             }
             catch
             {
@@ -45,28 +48,39 @@ namespace SCSA
                 {
                     WebClient client = new WebClient();
                     string download = client.DownloadString(image);
-                    string[] split = download.Split(';');
-                    if (split.Length == 1)
+                    if (download == backup)
                     {
-                        monitor = 1;
-                        번모니터ToolStripMenuItem1.Enabled = false;
-                        번모니터ToolStripMenuItem1.Checked = false;
-                        번모니터ToolStripMenuItem1.Text = "";
-                        번모니터ToolStripMenuItem.Checked = true;
+                        timer++;
+                        if (timer > 30)
+                        {
+                            bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
+                        }
                     }
                     else
                     {
-                        번모니터ToolStripMenuItem1.Enabled = true;
-                        번모니터ToolStripMenuItem1.Text = "2번 모니터";
-                    }
-                    bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
-                    if (monitor == 1)
-                    {
-                        bitmap = Base64ToBitmap(split[0]);
-                    }
-                    else
-                    {
-                        bitmap = Base64ToBitmap(split[1]);
+                        bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
+                        string[] split = download.Split(';');
+                        if (split.Length == 1)
+                        {
+                            monitor = 1;
+                            번모니터ToolStripMenuItem1.Enabled = false;
+                            번모니터ToolStripMenuItem1.Checked = false;
+                            번모니터ToolStripMenuItem1.Text = "";
+                            번모니터ToolStripMenuItem.Checked = true;
+                        }
+                        else
+                        {
+                            번모니터ToolStripMenuItem1.Enabled = true;
+                            번모니터ToolStripMenuItem1.Text = "2번 모니터";
+                        }
+                        if (monitor == 1)
+                        {
+                            bitmap = Base64ToBitmap(split[0]);
+                        }
+                        else
+                        {
+                            bitmap = Base64ToBitmap(split[1]);
+                        }
                     }
                     pictureBox1.Image = bitmap;
                 }
@@ -135,13 +149,23 @@ namespace SCSA
         private void 사진찍기개발중ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            bitmap.Save($"");
+            try
+            {
+                bitmap.Save($"C:\\SCS\\{now.Year}-{now.Month}-{now.Day}-{now.Hour}-{now.Minute}-{now.Second}.{now.Millisecond}.png", ImageFormat.Png);
+                MessageBox.Show("완료");
+            }
+            catch
+            {
+                Directory.CreateDirectory("C:\\SCS");
+                bitmap.Save($"C:\\SCS\\{now.Year}-{now.Month}-{now.Day}-{now.Hour}-{now.Minute}-{now.Second}.{now.Millisecond}.png", ImageFormat.Png);
+                MessageBox.Show("완료");
+            }
         }
 
         private void 메세지전송ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SCSASandMessage message = new SCSASandMessage();
-            message.url = mgr;
+            message.url = msg;
             message.ShowDialog();
         }
     }

