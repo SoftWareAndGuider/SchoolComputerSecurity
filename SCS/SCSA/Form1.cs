@@ -13,8 +13,6 @@ namespace SCSA
 {
     public partial class Form1 : Form
     {
-        int timer = 0;
-        string backup;
         bool looping = true;
         int monitor = 1;
         string image, mgr, msg;
@@ -48,44 +46,34 @@ namespace SCSA
                 {
                     WebClient client = new WebClient();
                     string download = client.DownloadString(image);
-                    if (download == backup)
+                    bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
+                    string[] split = download.Split(';');
+                    if (split.Length == 1)
                     {
-                        timer++;
-                        if (timer > 30)
-                        {
-                            bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
-                        }
+                        monitor = 1;
+                        번모니터ToolStripMenuItem1.Enabled = false;
+                        번모니터ToolStripMenuItem1.Checked = false;
+                        번모니터ToolStripMenuItem1.Text = "";
+                        번모니터ToolStripMenuItem.Checked = true;
                     }
                     else
                     {
-                        bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
-                        string[] split = download.Split(';');
-                        if (split.Length == 1)
-                        {
-                            monitor = 1;
-                            번모니터ToolStripMenuItem1.Enabled = false;
-                            번모니터ToolStripMenuItem1.Checked = false;
-                            번모니터ToolStripMenuItem1.Text = "";
-                            번모니터ToolStripMenuItem.Checked = true;
-                        }
-                        else
-                        {
-                            번모니터ToolStripMenuItem1.Enabled = true;
-                            번모니터ToolStripMenuItem1.Text = "2번 모니터";
-                        }
-                        if (monitor == 1)
-                        {
-                            bitmap = Base64ToBitmap(split[0]);
-                        }
-                        else
-                        {
-                            bitmap = Base64ToBitmap(split[1]);
-                        }
+                        번모니터ToolStripMenuItem1.Enabled = true;
+                        번모니터ToolStripMenuItem1.Text = "2번 모니터";
+                    }
+                    if (monitor == 1)
+                    {
+                        bitmap = Base64ToBitmap(split[0]);
+                    }
+                    else
+                    {
+                        bitmap = Base64ToBitmap(split[1]);
                     }
                     pictureBox1.Image = bitmap;
                 }
                 catch
                 {
+                    pictureBox1.Image = Bitmap.FromFile("Program\\offline.jpg");
                 }
                 Thread.Sleep(250);
             }
@@ -144,6 +132,14 @@ namespace SCSA
                 WebClient client = new WebClient();
                 client.DownloadString($"{mgr}/shutdown");
             }
+        }
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+        }
+
+        private void 사진폴더열기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\SCS");
         }
 
         private void 사진찍기개발중ToolStripMenuItem_Click(object sender, EventArgs e)

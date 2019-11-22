@@ -47,6 +47,8 @@
             this.번모니터ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.사진찍기개발중ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.사진폴더열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -193,22 +195,44 @@
             // 
             // 사진찍기개발중ToolStripMenuItem
             // 
+            this.사진찍기개발중ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.사진폴더열기ToolStripMenuItem});
             this.사진찍기개발중ToolStripMenuItem.Name = "사진찍기개발중ToolStripMenuItem";
             this.사진찍기개발중ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.사진찍기개발중ToolStripMenuItem.Text = "사진 찍기";
             this.사진찍기개발중ToolStripMenuItem.Click += new System.EventHandler(this.사진찍기개발중ToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sitka Small", 120F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(70, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(661, 237);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Offline";
+            // 
+            // 사진폴더열기ToolStripMenuItem
+            // 
+            this.사진폴더열기ToolStripMenuItem.Name = "사진폴더열기ToolStripMenuItem";
+            this.사진폴더열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.사진폴더열기ToolStripMenuItem.Text = "사진 폴더 열기";
+            this.사진폴더열기ToolStripMenuItem.Click += new System.EventHandler(this.사진폴더열기ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "SchoolComputerAdmin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -237,6 +261,8 @@
         private System.Windows.Forms.ToolStripMenuItem 허용ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 사진찍기개발중ToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem 사진폴더열기ToolStripMenuItem;
     }
 }
 

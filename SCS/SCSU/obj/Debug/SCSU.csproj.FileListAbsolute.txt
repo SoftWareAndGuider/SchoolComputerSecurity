@@ -25,7 +25,6 @@ C:\Users\배재현\Desktop\SCS\SCSU\bin\Debug\SCSU.exe
 C:\Users\배재현\Desktop\SCS\SCSU\bin\Debug\SCSU.pdb
 C:\Users\배재현\Desktop\SCS\SCSU\bin\Debug\Newtonsoft.Json.dll
 C:\Users\배재현\Desktop\SCS\SCSU\bin\Debug\Newtonsoft.Json.xml
-C:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.csprojAssemblyReference.cache
 C:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.Form1.resources
 C:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.Properties.Resources.resources
 C:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.GenerateResource.cache
@@ -46,3 +45,4 @@ G:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.GenerateResource.cache
 G:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.CopyComplete
 G:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.exe
 G:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.pdb
+C:\Users\배재현\Desktop\SCS\SCSU\obj\Debug\SCSU.csprojAssemblyReference.cache

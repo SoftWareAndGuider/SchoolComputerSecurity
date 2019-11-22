@@ -28,7 +28,6 @@ C:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\SCSA.exe
 C:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\SCSA.pdb
 C:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\Newtonsoft.Json.dll
 C:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\Newtonsoft.Json.xml
-C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csprojAssemblyReference.cache
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.Form1.resources
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.Properties.Resources.resources
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.SCSASandMessage.resources
@@ -37,3 +36,18 @@ C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csproj.CopyComplete
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.exe
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.pdb
 C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.SCSAPopup.resources
+C:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csprojAssemblyReference.cache
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csprojAssemblyReference.cache
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.Form1.resources
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.Properties.Resources.resources
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.SCSAPopup.resources
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.SCSASandMessage.resources
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csproj.GenerateResource.cache
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.exe
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.pdb
+G:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\SCSA.exe.config
+G:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\SCSA.exe
+G:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\SCSA.pdb
+G:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\Newtonsoft.Json.dll
+G:\Users\배재현\Desktop\SCS\SCSA\bin\Debug\Newtonsoft.Json.xml
+G:\Users\배재현\Desktop\SCS\SCSA\obj\Debug\SCSA.csproj.CopyComplete

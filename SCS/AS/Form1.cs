@@ -24,7 +24,7 @@ namespace AS
             ShowInTaskbar = false;
             loop ();
         }
-        private void loop()
+        private async void loop()
         {
             while(looptrue)
             {
@@ -34,6 +34,7 @@ namespace AS
                 {
                     System.Diagnostics.Process.Start("SCSU.exe");
                 }
+                await Task.Delay(5000);
             }
 
         }
