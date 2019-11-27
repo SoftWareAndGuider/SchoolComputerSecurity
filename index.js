@@ -43,6 +43,13 @@ app.get('/view', (req, res) => {
   })
 })
 
+app.get('/ieSuck', (req, res) => {
+  console.log(chalk.bgBlue.black('[webGet] by ' + req.ip))
+  ejs.renderFile(path + '/view/ieSuck.ejs', (err, str) => {
+    if (err) console.log(err)
+    res.send(str)
+  })
+})
 // }
 
 // Base64 JSON {
