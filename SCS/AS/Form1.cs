@@ -30,11 +30,11 @@ namespace AS
             {
                 Hide();
                 System.Diagnostics.Process[] scsu = System.Diagnostics.Process.GetProcessesByName("SCSU");
-                if (scsu.Length >= 0)
+                if (scsu.Length <= 0)
                 {
                     System.Diagnostics.Process.Start("SCSU.exe");
                 }
-                await Task.Delay(5000);
+                await Task.Delay(10000);
             }
 
         }

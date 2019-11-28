@@ -134,7 +134,7 @@ namespace SCSU
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Process.Start("AS.exe");
+            Process.Start("Program\\AS.exe");
             WebClient client = new WebClient();
             string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
             string url = "http://2019swag.iptime.org:1234/api/macJson/" + mac;

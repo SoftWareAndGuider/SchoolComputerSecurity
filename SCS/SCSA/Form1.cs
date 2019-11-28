@@ -46,7 +46,6 @@ namespace SCSA
                 {
                     WebClient client = new WebClient();
                     string download = client.DownloadString(image);
-                    bitmap = new Bitmap((Bitmap)Image.FromFile("1px.png"));
                     string[] split = download.Split(';');
                     if (split.Length == 1)
                     {
@@ -73,7 +72,7 @@ namespace SCSA
                 }
                 catch
                 {
-                    pictureBox1.Image = Bitmap.FromFile("Program\\offline.jpg");
+                    pictureBox1.Image  = Bitmap.FromFile("Program\\off.png");
                 }
                 Thread.Sleep(250);
             }
