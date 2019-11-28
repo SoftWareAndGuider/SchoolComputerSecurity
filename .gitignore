@@ -1,1 +1,5 @@
 *.exe
+*.lock
+*.ide
+*.ide-wal
+*.suo
