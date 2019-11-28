@@ -2,6 +2,7 @@
 using System.Net;
 using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
+using System.Web;
 
 namespace SCSA
 {
@@ -21,8 +22,8 @@ namespace SCSA
         private void button1_Click(object sender, EventArgs e)
         {
             WebClient client = new WebClient();
-            string a = textBox1.Text.Replace(' ', '_');
-            client.DownloadString($"{url}/{a}");
+            string uri = $"{url}/{HttpUtility.UrlEncode(textBox1.Text)}";
+            //client.DownloadString(HttpUtility.UrlEncode($"{url}/{textBox1.Text}"));
             Close();
         }
     }

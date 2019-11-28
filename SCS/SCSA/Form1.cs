@@ -161,7 +161,7 @@ namespace SCSA
         {
             SCSASandMessage message = new SCSASandMessage();
             message.url = msg;
-            message.ShowDialog();
+            message.Show();
         }
     }
 }
