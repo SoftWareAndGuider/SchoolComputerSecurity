@@ -129,7 +129,7 @@ app.get('/api/msgJson/:grade/:room/:message', (req, res) => {
   const { grade, room, message } = req.params
   console.log(chalk.bgBlue.black('[msgGet] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', mgrData[grade][room][5], mgrData[grade][room][6]]
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
 
   mgrData[grade][room][3] = true
   mgrData[grade][room][4] = message
