@@ -30,6 +30,7 @@ namespace SCSU
             {
                 string url = settingJson;
                 WebClient client = new WebClient();
+                client.Encoding = System.Text.Encoding.UTF8;
                 JArray setting = JArray.Parse(client.DownloadString(url));
                 if ((bool)setting[0])
                 {
