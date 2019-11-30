@@ -27,7 +27,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha256-c+C87jupO1otD1I5uyxV68WmSLCqtIoNlcHLXtzLCT0=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.js" integrity="sha256-bbNosz5JlGdezcH8vxdbJ+b/hVKQTTRxrb+kM13pxc0=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1213a7cbad.js" crossorigin="anonymous"></script>
     <script src="https://raw.githubusercontent.com/github/fetch/master/fetch.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
@@ -72,6 +71,18 @@
           <button class="btn gradeBtn btn-success text-white text-center hvr-icon-up" rel="tooltip" data-placement="top" data-html="true" data-toggle="modal" data-target="#grade3Connect" title="여기를 눌러<br />관리도구로 이동합니다!">
             <h1><i class="fas fa-users hvr-icon"></i></h1>
             <h5 class="card-title">3학년</h5>
+          </button>
+        </div>
+      </div>
+      <div class="row ex-relative text-center">
+        <div class="col-lg-6">
+          <button class="btn exBtn btn-light text-center hvr-icon-up" rel="tooltip" data-placement="bottom" data-html="true" data-toggle="modal" data-target="#changePW" title="여기를 눌러<br />비밀번호를 수정할 수 있습니다">
+            <i class="fas fa-lock hvr-icon"></i> 비밀번호 변경
+          </button>
+        </div>
+        <div class="col-lg-6">
+          <button class="btn exBtn btn-secondary text-center hvr-icon-buzz-out" rel="tooltip" data-placement="bottom" data-html="true" title="곧 추가될 예정입니다!">
+            <i class="fas fa-eye hvr-icon"></i> 학년 전체보기 (공사중)
           </button>
         </div>
       </div>
@@ -185,6 +196,54 @@
         </div>
       </div>
     </div>
+
+    
+          <!-- Modal -->
+          <div class="modal fade" id="changePW" tabindex="-1" role="dialog" aria-labelledby="changePWLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="changePWLabel">비밀번호 변경</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="tgroom">접속할 반</label>
+                    <select class="form-control" id="tgpwroom">
+                      <% for (let c = 1; c < 4; c++ ) {
+                          for (let d = 1; d < 13; d++) { %>
+                        <option value="<%- c %>/<%- d %>"><%= c %>학년 <%= d %>반</option>
+                      <% }} %>
+                    </select>
+                    <small class="form-text text-muted">반을 정확하게 선택해 주세요</small>
+                  </div>
+                  <hr />
+                  <div class="form-group">
+                    <label for="tgpw">이전 비밀번호</label>
+                    <input type="password" class="form-control" id="tgoldpw" placeholder="이전 비밀번호를 여기 적어주세요">
+                    <small class="form-text text-muted">전에 사용하던 비밀번호를 입력해주세요.</small>
+                  </div>
+                  <hr />
+                  <div class="form-group">
+                    <label for="tgpw">신규 비밀번호</label>
+                    <input type="password" class="form-control" id="tgnewpw" placeholder="신규 비밀번호를 여기 적어주세요">
+                    <small class="form-text text-muted">새로 사용할 비밀번호를 입력해주세요.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="tgpw">신규 비밀번호 재입력</label>
+                    <input type="password" class="form-control" id="tgrepw" placeholder="한번 더 적어주세요">
+                    <small class="form-text text-muted">오타를 방지하기 위해 비밀번호를 다시 한번 더 입력해주세요.</small>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary hvr-icon-buzz-out" data-dismiss="modal"><i class="fas fa-backspace hvr-icon"></i> 취소</button>
+                  <button type="button" class="btn btn-primary hvr-icon-wobble-horizontal" onclick="changePw()"><i class="fas fa-lock hvr-icon"></i> 변경!</button>
+                </div>
+              </div>
+            </div>
+          </div>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
       
@@ -192,12 +251,16 @@
         font-family: 'Jua', sans-serif;
       }
       
+      html {
+        overflow: hidden;
+      }
+
       body {
         height: 100vh;
         background-color: #2C2F33;
         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
         background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
+        animation: gradientBG 40s ease infinite;
       }
 
       .toptext {
@@ -211,6 +274,13 @@
         width: 50vw;
       }
 
+      .ex-relative {
+        position: absolute;
+        top: 70%;
+        left: 26%;
+        width: 50vw;
+      }
+
       .gradeBtn {
         padding: 5vh 0px;
         height: 100%;
@@ -221,7 +291,23 @@
         box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
       }
 
+      .exBtn {
+        padding: 2vh 0px;
+        height: 100%;
+        width: 100%;
+        opacity: 0%;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+      }
+
       .gradeBtn:hover {
+        -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
+        -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
+        box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
+      }
+
+      .exBtn:hover {
         -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
         -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
         box-shadow: 5px 5px 10px 0px rgba(0,0,0,1);
@@ -249,12 +335,14 @@
       document.getElementById('tgpw1').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(1) })
       document.getElementById('tgpw2').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(2) })
       document.getElementById('tgpw3').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(3) })
+      document.getElementById('tgpw3').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(3) })
 
       function goAuth (grade) {
         const tgroom = document.getElementById('tgroom' + grade), tgpw = document.getElementById('tgpw' + grade)
-        fetch('/api/auth/genUUID/' + grade + '/' + tgroom.value + '/' + sha256(tgpw.value)).then((res) => {
+        fetch('/api/auth/genUUID/' + grade + '/' + tgroom.value + '/' + (tgpw.value || 'undefied')).then((res) => {
           res.json().then((v) => {
             if (v.correct) {
+              tgpw.value = ''
               window.open(v.path)
             } else {
               tgpw.value = ''
@@ -267,10 +355,46 @@
         })
       }
 
+      function changePw () {
+        const tgpwroom = document.getElementById('tgpwroom'), tgoldpw = document.getElementById('tgoldpw'), tgnewpw = document.getElementById('tgnewpw'), tgrepw = document.getElementById('tgrepw')
+
+        if (!tgoldpw.value || !tgnewpw.value || !tgrepw.value) {
+          alert('빈칸을 모두 채워주세요')
+        } else if (tgnewpw.value !== tgrepw.value) {
+          tgnewpw.value = ''
+          tgrepw.value = ''
+          tgnewpw.style.backgroundColor = 'lightpink'
+          tgrepw.style.backgroundColor = 'lightpink'
+          setTimeout(() => {
+            tgnewpw.style.backgroundColor = 'white'
+            tgrepw.style.backgroundColor = 'white'
+          }, 1000)
+        } else {
+          fetch('/api/auth/changePW/' + tgpwroom.value + '/' + tgoldpw.value + '/' + tgnewpw.value).then((res) => {
+            res.json().then((v) => {
+              console.log(v.proc)
+              if (v.proc === 4) {
+                tgoldpw.value = ''
+                tgoldpw.style.backgroundColor = 'lightpink'
+                setTimeout(() => {
+                  tgoldpw.style.backgroundColor = 'white'
+                }, 1000)
+              } else {
+                alert('비밀번호 수정에 성공하였습니다!')
+                window.location.reload()
+              }
+            })
+          })
+        }
+      }
+
       $(document).ready(() => {
         $('[rel="tooltip"]').tooltip({trigger: "hover"});
       })
       anime({ targets: '.gradeBtn', duration: 1, translateY: -1000, complete: () => { anime({ targets: '.gradeBtn', translateY: -80, opacity: 100, delay: anime.stagger(100) }) } })
+      setTimeout(() => {
+        anime({ targets: '.exBtn', duration: 1, translateY: -1000, complete: () => { anime({ targets: '.exBtn', translateY: -80, opacity: 100, delay: anime.stagger(100) }) } })
+      }, 500)
     </script>
   </body>
 </html>

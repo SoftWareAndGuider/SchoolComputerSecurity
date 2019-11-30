@@ -23,6 +23,7 @@ School Computer Security (장곡중학교 학급 내 정보화기기 관리 페�
         - [GET /grade(학년)/room(반)/(UUID)](#get-grade%ed%95%99%eb%85%84room%eb%b0%98uuid)
       - [Sec2: 로그인 및 인증](#sec2-%eb%a1%9c%ea%b7%b8%ec%9d%b8-%eb%b0%8f-%ec%9d%b8%ec%a6%9d)
         - [GET /api/auth/genUUID/(학년)/(반)/(비밀번호)](#get-apiauthgenuuid%ed%95%99%eb%85%84%eb%b0%98%eb%b9%84%eb%b0%80%eb%b2%88%ed%98%b8)
+        - [GET /api/auth/changePW/(학년)/(반)/(이전비밀번호)/(신규비밀번호)](#get-apiauthchangepw%ed%95%99%eb%85%84%eb%b0%98%ec%9d%b4%ec%a0%84%eb%b9%84%eb%b0%80%eb%b2%88%ed%98%b8%ec%8b%a0%ea%b7%9c%eb%b9%84%eb%b0%80%eb%b2%88%ed%98%b8)
       - [Sec3: 맥주소 저장](#sec3-%eb%a7%a5%ec%a3%bc%ec%86%8c-%ec%a0%80%ec%9e%a5)
         - [GET /api/macJson/(맥주소)](#get-apimacjson%eb%a7%a5%ec%a3%bc%ec%86%8c)
         - [GET /api/macJson/(학년)/(반)/(맥주소)](#get-apimacjson%ed%95%99%eb%85%84%eb%b0%98%eb%a7%a5%ec%a3%bc%ec%86%8c)
@@ -53,8 +54,6 @@ git clone https://github.com/SoftWareAndGuider/SchoolComputerSecurity.git
 ```sh
 npm i 혹은 yarn
 ```
-
-HashCrypto.js 파일을 작성하여 암호화 알고리즘을 작성하셔야 합니다
 
 ## 개발용 실행
 
@@ -157,6 +156,28 @@ UUID를 검사한후 학년, 반에 맞는 뷰어를 전송합니다
 }
 ```
 
+##### GET /api/auth/changePW/(학년)/(반)/(이전비밀번호)/(신규비밀번호)
+
+
+학년, 반에 맞는 이전 비밀번호인지 확인한 후 신규 비밀번호로 비밀번호를 수정한 뒤 JSON Object를 반환합니다
+```json
+// 정상적으로 처리된 경우
+{
+  "proc": 0
+}
+
+// 존재하지 않는 학년, 반 일경우
+{
+  "proc": 3
+}
+
+// 비밀번호가 틀렸을경우 
+{
+  "proc": 4
+}
+```
+그 외의 규칙은 [quickLogin/AccountBase](https://github.com/tritiumNetworks/quickLogin/blob/master/class/AccountBase.js#L58)를 따릅니다
+
 * Content-Type: `application/json`
 
 #### Sec3: 맥주소 저장
@@ -201,16 +222,16 @@ body로 `text/plain`을 받습니다, body는 다음의 형식이여야 합니�
 학년, 반에 맞는 관리 데이터를 JSON Array로 전송한 후 초기화 합니다
 ```json
 // 형식
-[종료, 재시작, 절전, 메세지 유무, 메세지 내용, 명령프롬포트 허가 유무, 작업관리자 허가 유무]
+// [종료, 재시작, 절전, 메세지 유무, 메세지 내용, 명령프롬포트 허가 유무, 작업관리자 허가 유무]
 
 // 초기값
-[false, false, false, false, '', false, false]
+[false, false, false, false, "", false, false]
 
 // 예시) 종료를 요청했을 경우
-[true, false, false, false, '', true||false, true||false]
+[true, false, false, false, "", true|false, true|false]
 
 // 예시) 메세지가 있을경우
-[false, false, false true, '메세지 내용', true||false, true||false]
+[false, false, false true, "메세지 내용", true|false, true|false]
 ```
 
 * Content-Type: `application/json`

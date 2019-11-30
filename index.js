@@ -7,11 +7,12 @@ const path = require('path').resolve()
 const uuid = require('uuid/v4')
 const chalk = require('chalk')
 const express = require('express')
-const hashCrypto = require('./hashCrypto')
+const { AccountBase } = require('ezlogin')
 
 if (!fs.existsSync(path + '/data/')) fs.mkdirSync(path + '/data')
 if (!fs.existsSync(path + '/data/macJson.json')) fs.writeFileSync(path + '/data/macJson.json', '{}')
 const macData = require(path + '/data/macJson.json')
+const accounts = new AccountBase({ path: path + '/data/pwJson.json' })
 
 const app = express()
 const auths = []
@@ -21,6 +22,14 @@ const offlineSW = [null, [], [], []]
 
 app.use(cors())
 app.use(express.text({ limit: '100MB' }))
+
+for (let ig = 1; ig < 4; ig++) {
+  for (let ir = 1; ir < 13; ir++) {
+    accounts.register(`${ig}-${ir}`, `wkdrhr@${ig}${ir}${ig}${ir}`)
+    fs.writeFileSync(path + '/data/pwJson.json', JSON.stringify(accounts.accounts))
+  }
+}
+console.log(accounts.accounts)
 
 setInterval(() => {
   imgData.forEach((grade, i1) => {
@@ -171,7 +180,7 @@ app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
   const { grade, room, passwd } = req.params
   console.log(chalk.bgMagenta.black('[uidReq] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (hashCrypto(grade, room, passwd)) {
+  if (accounts.login(`${grade}-${room}`, passwd) === 0) {
     const id = uuid()
     console.log(chalk.bgCyan.black('[uidGen] by ' + req.ip + ' to ' + id))
     auths[auths.length] = id
@@ -180,6 +189,11 @@ app.get('/api/auth/genUUID/:grade/:room/:passwd', (req, res) => {
     console.log(chalk.bgRed.black('[uidNeg] by ' + req.ip))
     res.send({ correct: false })
   }
+})
+
+app.get('/api/auth/changePW/:grade/:room/:oldpw/:newpw', (req, res) => {
+  const { grade, room, oldpw, newpw } = req.params
+  res.send({ proc: accounts.changePW(`${grade}-${room}`, oldpw, newpw) })
 })
 // }
 
