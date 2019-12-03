@@ -1,0 +1,9 @@
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe.config
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.pdb
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.Form1.resources
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.Properties.Resources.resources
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.exe
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.pdb
