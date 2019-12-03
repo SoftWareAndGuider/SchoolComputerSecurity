@@ -90,7 +90,7 @@
         <h6>
           Copyright <i class="fas fa-copyright"></i> 2019~2020. 장곡중학교(칠곡) - Software And Guiders, MIT Licensed. <br /> 
           모든 저작권은 (칠곡) 장곡중학교와 Software And Guiders(SWAG, 장곡중 소프트웨어 동아리)에 있으며, 무단 복제 및 2차 배포를 금합니다 <br /> 
-          이 소프트웨어 및 웹페이지, 서버는 장곡중학교(칠곡) 교사님들의 의견을 반영하여 제작되었습니다 <i class="fas fa-heart"></i> 
+          이 소프트웨어 및 웹페이지, 서버는 장곡중학교(칠곡) 교사님들의 의견을 반영하여 제작되었습니다 <button id="easter" class="btn text-white" style="padding: 0px;"><i class="fas fa-heart"></i></button>
         </h6>
       </div>
     </div>
@@ -336,6 +336,8 @@
       document.getElementById('tgpw2').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(2) })
       document.getElementById('tgpw3').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(3) })
       document.getElementById('tgpw3').addEventListener('keypress', (ev) => { if (ev.keyCode === 13) goAuth(3) })
+
+      document.getElementById('easter').addEventListener('click', () => { document.getElementsByTagName('body')[0].style.animationDuration = '0.1s' })
 
       function goAuth (grade) {
         const tgroom = document.getElementById('tgroom' + grade), tgpw = document.getElementById('tgpw' + grade)
