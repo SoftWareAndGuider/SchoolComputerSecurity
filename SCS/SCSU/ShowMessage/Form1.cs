@@ -24,7 +24,8 @@ namespace ShowMessage
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            message.Text = System.IO.File.ReadAllText("Program\\Message.txt");
+            System.IO.File.Delete("Program\\Message.txt");
         }
     }
 }

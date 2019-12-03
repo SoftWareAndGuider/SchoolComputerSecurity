@@ -16,7 +16,7 @@ namespace SCSU
         private void button1_Click(object sender, EventArgs e)
         {
             WebClient client = new WebClient();
-            string url = "http://2019swag.iptime.org:1234/api/macJson";
+            string url = "http://localhost:1234/api/macJson";
             string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
             //textBox1.Text = 학년, textBox2.Text = 반
             client.DownloadString($"{url}/{textBox1.Text}/{textBox2.Text}/{mac}");

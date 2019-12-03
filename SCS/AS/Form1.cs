@@ -12,7 +12,6 @@ namespace AS
 {
     public partial class Form1 : Form
     {
-        bool looptrue = true;
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +25,7 @@ namespace AS
         }
         private async void loop()
         {
-            while(looptrue)
+            while(true)
             {
                 Hide();
                 System.Diagnostics.Process[] scsu = System.Diagnostics.Process.GetProcessesByName("SCSU");
@@ -42,7 +41,6 @@ namespace AS
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            looptrue = false;
         }
     }
 }

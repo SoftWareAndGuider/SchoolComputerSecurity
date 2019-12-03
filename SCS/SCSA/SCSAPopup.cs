@@ -61,9 +61,9 @@ namespace SCSA
             WebClient client = new WebClient();
             string[] url = new string[3]
             {
-                $"http://2019swag.iptime.org:1234/api/imgJson/{textBox1.Text}/{textBox2.Text}",
-                $"http://2019swag.iptime.org:1234/api/mgrJson/{textBox1.Text}/{textBox2.Text}",
-                $"http://2019swag.iptime.org:1234/api/msgJson/{textBox1.Text}/{textBox2.Text}",
+                $"http://localhost:1234/api/imgJson/{textBox1.Text}/{textBox2.Text}",
+                $"http://localhost:1234/api/mgrJson/{textBox1.Text}/{textBox2.Text}",
+                $"http://localhost:1234/api/msgJson/{textBox1.Text}/{textBox2.Text}",
             };
             System.IO.File.WriteAllLines("url.txt",url);
             Close();

@@ -46,9 +46,8 @@ namespace SCSU
                 }
                 else if ((bool)setting[3])
                 {
-                    File.WriteAllText("Message.txt" ,setting[4].ToString());
-
-                    Process.Start("ShowMessage.exe");
+                    File.WriteAllText("Program\\Message.txt" ,setting[4].ToString());
+                    Process.Start("Program\\ShowMessage.exe");
                 }
 
                 if ((bool)setting["cmd"] != cmd)
@@ -133,7 +132,7 @@ namespace SCSU
             Process.Start("Program\\AS.exe");
             WebClient client = new WebClient();
             string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
-            string url = "http://2019swag.iptime.org:1234/api/macJson/" + mac;
+            string url = "http://localhost:1234/api/macJson/" + mac;
             string macadress = client.DownloadString(url);
             if (macadress == "Fail")
             {
@@ -145,8 +144,8 @@ namespace SCSU
             else
             {
                 string[] toUrl = macadress.Split(';');
-                captureText = "http://2019swag.iptime.org:1234" + toUrl[0];
-                settingJson = "http://2019swag.iptime.org:1234" + toUrl[1];
+                captureText = "http://localhost:1234" + toUrl[0];
+                settingJson = "http://localhost:1234" + toUrl[1];
                 GetPicture.Enabled = true;
                 Thread thread = new Thread(new ThreadStart(loop));
                 thread.Start();
