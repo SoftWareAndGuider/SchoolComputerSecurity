@@ -33,6 +33,7 @@ namespace AS
                 if (scsu.Length <= 0)
                 {
                     System.Diagnostics.Process.Start("SCSU.exe");
+                    Application.Exit();
                 }
                 await Task.Delay(10000);
             }
