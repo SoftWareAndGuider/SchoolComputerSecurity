@@ -44,8 +44,9 @@ namespace SCSU_Installer
             Console.WriteLine("압축 해제 완료");
             Console.WriteLine("SCSUUUpdater.exe의 바로가기를 복사해주세요");
 
-            System.Diagnostics.Process.Start("explorer.exe", "shell:startup");
-
+            System.Diagnostics.Process.Start("explorer.exe", @"shell:startup");
+            System.Diagnostics.Process.Start("explorer.exe", @"C:\SCS");
+            
             Console.WriteLine("시작 프로그램 등록 완료");
             Console.WriteLine("설치 완료");
             Console.WriteLine("아무 키나 누르세요 . . . . .");

@@ -6,3 +6,11 @@ C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.ex
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.pdb
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\Interop.IWshRuntimeLibrary.dll
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.csproj.ResolveComReference.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\bin\Debug\SCSU Installer.exe.config
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\bin\Debug\SCSU Installer.exe
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\bin\Debug\SCSU Installer.pdb
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.csprojAssemblyReference.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\Interop.IWshRuntimeLibrary.dll
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.csproj.ResolveComReference.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.exe
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU Installer\obj\Debug\SCSU Installer.pdb
