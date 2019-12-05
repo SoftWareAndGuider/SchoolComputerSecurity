@@ -43,3 +43,14 @@ C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache

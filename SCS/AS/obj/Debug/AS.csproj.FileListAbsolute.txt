@@ -25,3 +25,12 @@ C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\AS\obj\Debug\AS.csproj.GenerateResource.cache
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\AS\obj\Debug\AS.exe
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\AS\obj\Debug\AS.pdb
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\bin\Debug\AS.exe.config
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\bin\Debug\AS.exe
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\bin\Debug\AS.pdb
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\obj\Debug\AS.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\obj\Debug\AS.Form1.resources
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\obj\Debug\AS.Properties.Resources.resources
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\obj\Debug\AS.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\obj\Debug\AS.exe
+C:\Users\CS\Desktop\SCSU (Client)\SCS\AS\obj\Debug\AS.pdb
