@@ -59,17 +59,20 @@
             // 
             // message
             // 
+            this.message.AcceptsReturn = true;
+            this.message.AcceptsTab = true;
             this.message.BackColor = System.Drawing.Color.White;
             this.message.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.message.Cursor = System.Windows.Forms.Cursors.Default;
             this.message.Enabled = false;
             this.message.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.message.Location = new System.Drawing.Point(189, 13);
+            this.message.Location = new System.Drawing.Point(189, 12);
             this.message.Multiline = true;
             this.message.Name = "message";
             this.message.ReadOnly = true;
-            this.message.Size = new System.Drawing.Size(581, 125);
+            this.message.Size = new System.Drawing.Size(599, 126);
             this.message.TabIndex = 2;
+            this.message.TabStop = false;
             // 
             // notifyIcon1
             // 
@@ -105,7 +108,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Yellow;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

