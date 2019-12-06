@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS", "AS\AS.csproj", "{E3D6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowMessage", "SCSU\ShowMessage\ShowMessage.csproj", "{23C1CA1B-E102-4541-B428-AB8DE52578FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCSU Installer", "SCSU Installer\SCSU Installer.csproj", "{616DE4B6-0CA1-43CD-8E34-66E4F6821F27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCSUInstaller", "SCSUInstaller\SCSUInstaller.csproj", "{2BABC2DE-E1AF-4230-AF0E-EE6C5C84C3F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{23C1CA1B-E102-4541-B428-AB8DE52578FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C1CA1B-E102-4541-B428-AB8DE52578FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C1CA1B-E102-4541-B428-AB8DE52578FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{616DE4B6-0CA1-43CD-8E34-66E4F6821F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{616DE4B6-0CA1-43CD-8E34-66E4F6821F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{616DE4B6-0CA1-43CD-8E34-66E4F6821F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{616DE4B6-0CA1-43CD-8E34-66E4F6821F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BABC2DE-E1AF-4230-AF0E-EE6C5C84C3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BABC2DE-E1AF-4230-AF0E-EE6C5C84C3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BABC2DE-E1AF-4230-AF0E-EE6C5C84C3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BABC2DE-E1AF-4230-AF0E-EE6C5C84C3F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
