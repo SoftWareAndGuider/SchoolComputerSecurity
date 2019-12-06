@@ -17,8 +17,10 @@ namespace SCSUUpdater
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            re:
             try
             {
+                hide();
                 WebClient client = new WebClient();
                 string programpath = @"Program";
                 Directory.Delete(programpath, true);
@@ -32,9 +34,13 @@ namespace SCSUUpdater
                 System.Threading.Thread.Sleep(100);
                 ZipFile.ExtractToDirectory($@"{programpath}\SCSU.zip", programpath);
             }
-            catch { }
+            catch { System.Threading.Thread.Sleep(100); goto re; }
             System.Diagnostics.Process.Start(@"Program\SCSU.exe");
             Application.Exit();
+        }
+        private void hide()
+        {
+            Hide();
         }
     }
 }

@@ -7,3 +7,12 @@ C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.cspr
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.exe
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.pdb
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.csprojAssemblyReference.cache
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\bin\Debug\SCSUInstaller.exe.config
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\bin\Debug\SCSUInstaller.exe
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\bin\Debug\SCSUInstaller.pdb
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.csprojAssemblyReference.cache
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.Form1.resources
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.Properties.Resources.resources
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.csproj.GenerateResource.cache
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.exe
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.pdb

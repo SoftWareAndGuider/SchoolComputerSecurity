@@ -129,26 +129,34 @@ namespace SCSU
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Process.Start("Program\\AS.exe");
-            WebClient client = new WebClient();
-            string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
-            string url = "http://localhost:1234/api/macJson/" + mac;
-            string macadress = client.DownloadString(url);
-            if (macadress == "Fail")
+            re:
+            try
             {
-                GetPicture.Stop();
-                SCSUPopup popup = new SCSUPopup();
-                popup.ShowDialog();
-                Application.Restart();
+                Process.Start("Program\\AS.exe");
+                WebClient client = new WebClient();
+                string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
+                string url = "http://localhost:1234/api/macJson/" + mac;
+                string macadress = client.DownloadString(url);
+                if (macadress == "Fail")
+                {
+                    GetPicture.Stop();
+                    SCSUPopup popup = new SCSUPopup();
+                    popup.ShowDialog();
+                    Application.Restart();
+                }
+                else
+                {
+                    string[] toUrl = macadress.Split(';');
+                    captureText = "http://localhost:1234" + toUrl[0];
+                    settingJson = "http://localhost:1234" + toUrl[1];
+                    GetPicture.Enabled = true;
+                    Thread thread = new Thread(new ThreadStart(loop));
+                    thread.Start();
+                }
             }
-            else
+            catch
             {
-                string[] toUrl = macadress.Split(';');
-                captureText = "http://localhost:1234" + toUrl[0];
-                settingJson = "http://localhost:1234" + toUrl[1];
-                GetPicture.Enabled = true;
-                Thread thread = new Thread(new ThreadStart(loop));
-                thread.Start();
+                goto re;
             }
         }
     }

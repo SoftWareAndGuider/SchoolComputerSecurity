@@ -24,6 +24,7 @@ namespace SCSUInstaller
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
             TaskList.SetItemChecked(0, true);
             try
             {
@@ -58,6 +59,11 @@ namespace SCSUInstaller
             progressBar1.Value = 4;
             TaskList.SetItemChecked(5, true);
             progressBar1.Value = 5;
+            button1.Enabled = true;
+            if (DialogResult.Yes == MessageBox.Show("설치가 완료되었습니다. 다시 시작 하시겠습니까?", "리부팅", MessageBoxButtons.YesNo))
+            {
+                Process.Start("shutdown.exe", "/r /t 0");
+            }
         }
     }
 }

@@ -54,3 +54,5 @@ C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
