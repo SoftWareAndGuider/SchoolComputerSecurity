@@ -35,7 +35,14 @@ namespace SCSUUpdater
                 ZipFile.ExtractToDirectory($@"{programpath}\SCSU.zip", programpath);
             }
             catch { System.Threading.Thread.Sleep(100); goto re; }
-            System.Diagnostics.Process.Start(@"Program\SCSU.exe");
+            try
+            {
+                System.Diagnostics.Process.Start(@"Program\SCSU.exe");
+            }
+            catch
+            {
+                System.Diagnostics.Process.Start(@"C:\SCS\Program\SCSU.exe");
+            }
             Application.Exit();
         }
         private void hide()
