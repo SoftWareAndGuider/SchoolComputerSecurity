@@ -56,3 +56,14 @@ C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeL
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
 C:\Users\hj666\Desktop\프로그래밍\GitHub 프로젝트\SoftWareAndGuider\SCS\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
+H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb

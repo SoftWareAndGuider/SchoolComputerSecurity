@@ -51,10 +51,11 @@ namespace SCSUInstaller
             progressBar1.Value = 2;
 
             ZipFile.ExtractToDirectory($@"{programpath}\SCSUUpdater.zip", programpath);
+            File.Delete($@"{programpath}\SCSUUpdater.zip");
             TaskList.SetItemChecked(3, true);
             progressBar1.Value = 3;
             var reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true); 
-            reg.SetValue("SCSU", @"C:\SCS\SCSUUpdater.exe");
+            reg.SetValue("SCSU", @"C:\SCS\SCSUUpdater.lnk");
             TaskList.SetItemChecked(4, true);
             progressBar1.Value = 4;
             TaskList.SetItemChecked(5, true);
