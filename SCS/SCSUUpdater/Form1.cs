@@ -41,7 +41,14 @@ namespace SCSUUpdater
             }
             catch
             {
-                System.Diagnostics.Process.Start(@"C:\SCS\Program\SCSU.exe");
+                try
+                {
+                    System.Diagnostics.Process.Start(@"C:\SCS\Program\SCSU.exe");
+                }
+                catch
+                {
+                    goto re;
+                }
             }
             Application.Exit();
         }
