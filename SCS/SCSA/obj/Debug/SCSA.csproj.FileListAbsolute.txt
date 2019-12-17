@@ -107,3 +107,16 @@ C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSA\obj\Debug\SCSA.csproj.GenerateResourc
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSA\obj\Debug\SCSA.csproj.CopyComplete
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSA\obj\Debug\SCSA.exe
 C:\Users\CS\Desktop\SCSU (Client)\SCS\SCSA\obj\Debug\SCSA.pdb
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\bin\Debug\SCSA.exe.config
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\bin\Debug\SCSA.exe
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\bin\Debug\SCSA.pdb
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.Form1.resources
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.Properties.Resources.resources
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.SCSAPopup.resources
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.SCSASandMessage.resources
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.csproj.CopyComplete
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.exe
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSA\obj\Debug\SCSA.pdb

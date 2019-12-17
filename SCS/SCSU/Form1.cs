@@ -34,14 +34,20 @@ namespace SCSU
                 JArray setting = JArray.Parse(client.DownloadString(url));
                 if ((bool)setting[0])
                 {
+                    client.Headers.Add("Content-Type", "text/plain");
+                    client.UploadString(captureText, "PUT", "");
                     System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
                 }
                 else if ((bool)setting[1])
                 {
+                    client.Headers.Add("Content-Type", "text/plain");
+                    client.UploadString(captureText, "PUT", "");
                     System.Diagnostics.Process.Start("shutdown.exe", "-r -t 0");
                 }
                 else if ((bool)setting[2])
                 {
+                    client.Headers.Add("Content-Type", "text/plain");
+                    client.UploadString(captureText, "PUT", "");
                     Application.SetSuspendState(PowerState.Suspend, false, false);
                 }
                 else if ((bool)setting[3])

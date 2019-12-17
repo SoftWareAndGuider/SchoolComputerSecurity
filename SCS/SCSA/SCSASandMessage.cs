@@ -23,7 +23,7 @@ namespace SCSA
         {
             WebClient client = new WebClient();
             string uri = $"{url}/{HttpUtility.UrlEncode(textBox1.Text)}";
-            //client.DownloadString(HttpUtility.UrlEncode($"{url}/{textBox1.Text}"));
+            client.DownloadString(url);
             Close();
         }
     }
