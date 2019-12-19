@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Net;
 using System.Drawing;
 using System.Diagnostics;
@@ -9,6 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Threading;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 
 namespace SCSU
 {
@@ -24,7 +24,7 @@ namespace SCSU
             Opacity = 0;
             ShowInTaskbar = false;
         }
-        private void GetPicture_Tick(object sender, EventArgs e)
+        private async void GetPicture_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -34,18 +34,24 @@ namespace SCSU
                 JArray setting = JArray.Parse(client.DownloadString(url));
                 if ((bool)setting[0])
                 {
+                    looping = false;
+                    await Task.Delay(50);
                     client.Headers.Add("Content-Type", "text/plain");
                     client.UploadString(captureText, "PUT", "");
                     System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
                 }
                 else if ((bool)setting[1])
                 {
+                    looping = false;
+                    await Task.Delay(50);
                     client.Headers.Add("Content-Type", "text/plain");
                     client.UploadString(captureText, "PUT", "");
                     System.Diagnostics.Process.Start("shutdown.exe", "-r -t 0");
                 }
                 else if ((bool)setting[2])
                 {
+                    looping = false;
+                    await Task.Delay(50);
                     client.Headers.Add("Content-Type", "text/plain");
                     client.UploadString(captureText, "PUT", "");
                     Application.SetSuspendState(PowerState.Suspend, false, false);
@@ -70,6 +76,7 @@ namespace SCSU
 
                     }
                 }*/
+                if (Process.GetProcessesByName("SCSU").Length > 1) Application.Exit();
             }
             catch { }
         }
@@ -135,10 +142,10 @@ namespace SCSU
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            Process.Start("Program\\AS.exe");
             re:
             try
             {
-                Process.Start("Program\\AS.exe");
                 WebClient client = new WebClient();
                 string mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
                 string url = "http://localhost:1234/api/macJson/" + mac;

@@ -22,8 +22,9 @@ namespace SCSA
         private void button1_Click(object sender, EventArgs e)
         {
             WebClient client = new WebClient();
-            string uri = $"{url}/{HttpUtility.UrlEncode(textBox1.Text)}";
-            client.DownloadString(url);
+            string uri = $"{url}/{HttpUtility.UrlEncode(textBox1.Text,System.Text.Encoding.UTF8)}";
+            uri = uri.Replace("+", "%20");
+            client.DownloadString(uri);
             Close();
         }
     }

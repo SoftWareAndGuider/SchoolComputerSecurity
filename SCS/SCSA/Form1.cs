@@ -34,6 +34,10 @@ namespace SCSA
             {
                 SCSAPopup popup = new SCSAPopup();
                 popup.ShowDialog();
+                string[] split = File.ReadAllLines("url.txt");
+                image = $"{split[0]}";
+                mgr = $"{split[1]}";
+                msg = $"{split[2]}";
             }
             Thread thread = new Thread(new ThreadStart(loop));
             thread.Start();

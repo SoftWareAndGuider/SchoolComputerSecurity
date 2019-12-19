@@ -98,3 +98,16 @@ C:\Users\CS\Desktop\SCS (Client)\SCS\SCSU\obj\Debug\SCSU.csproj.GenerateResource
 C:\Users\CS\Desktop\SCS (Client)\SCS\SCSU\obj\Debug\SCSU.csproj.CopyComplete
 C:\Users\CS\Desktop\SCS (Client)\SCS\SCSU\obj\Debug\SCSU.exe
 C:\Users\CS\Desktop\SCS (Client)\SCS\SCSU\obj\Debug\SCSU.pdb
+C:\Users\CS\Desktop\SCS\SCSU\bin\Debug\SCSU.exe.config
+C:\Users\CS\Desktop\SCS\SCSU\bin\Debug\SCSU.exe
+C:\Users\CS\Desktop\SCS\SCSU\bin\Debug\SCSU.pdb
+C:\Users\CS\Desktop\SCS\SCSU\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CS\Desktop\SCS\SCSU\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.Form1.resources
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.Properties.Resources.resources
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.SCSUPopup.resources
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.CopyComplete
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.exe
+C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.pdb

@@ -25,3 +25,12 @@ H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.Prop
 H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.csproj.GenerateResource.cache
 H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.exe
 H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.pdb
+C:\Users\CS\Desktop\SCS\SCSUInstaller\bin\Debug\SCSUInstaller.exe.config
+C:\Users\CS\Desktop\SCS\SCSUInstaller\bin\Debug\SCSUInstaller.exe
+C:\Users\CS\Desktop\SCS\SCSUInstaller\bin\Debug\SCSUInstaller.pdb
+C:\Users\CS\Desktop\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.Form1.resources
+C:\Users\CS\Desktop\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.Properties.Resources.resources
+C:\Users\CS\Desktop\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.exe
+C:\Users\CS\Desktop\SCS\SCSUInstaller\obj\Debug\SCSUInstaller.pdb

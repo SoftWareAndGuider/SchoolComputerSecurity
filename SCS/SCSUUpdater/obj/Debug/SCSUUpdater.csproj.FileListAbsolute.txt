@@ -67,3 +67,25 @@ H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properti
 H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
 H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
 H:\Users\CS\Desktop\SCSU (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
+C:\Users\CS\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
+C:\Users\CS\Desktop\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
+C:\Users\CS\Desktop\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe.config
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.exe
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\bin\Debug\SCSUUpdater.pdb
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csprojAssemblyReference.cache
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.ResolveComReference.cache
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Form1.resources
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.Properties.Resources.resources
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.csproj.GenerateResource.cache
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.exe
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSUUpdater\obj\Debug\SCSUUpdater.pdb

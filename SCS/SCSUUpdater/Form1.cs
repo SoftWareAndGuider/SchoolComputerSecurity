@@ -25,11 +25,11 @@ namespace SCSUUpdater
                 string programpath = @"Program";
                 Directory.Delete(programpath, true);
                 Directory.CreateDirectory(programpath);
-                string ftpPath = "ftp server url"; //Your server file url
+                string ftpPath = "ftp://yourftp.com/fileshare/SCS/SCSU.zip"; //Your server file url
                 string targetPath = @"Program\SCSU.zip";
 
                 string userID = "ftp id"; //Your server id
-                string password = "ftp password"; //Your server password
+                string password = "ftp pw"; //Your server password
                 client.Credentials = new NetworkCredential(userID, password);
                 client.DownloadFile(ftpPath, targetPath);
                 System.Threading.Thread.Sleep(100);
