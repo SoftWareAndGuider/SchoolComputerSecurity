@@ -111,3 +111,5 @@ C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.GenerateResource.cache
 C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.csproj.CopyComplete
 C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.exe
 C:\Users\CS\Desktop\SCS\SCSU\obj\Debug\SCSU.pdb
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSU\bin\Debug\CSCore.dll
+C:\Users\CS\Desktop\SCS (Client)\SCS\SCSU\bin\Debug\CSCore.xml

