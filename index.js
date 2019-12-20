@@ -85,18 +85,18 @@ app.get('/api/mgrJson/:grade/:room', (req, res) => {
   const { grade, room } = req.params
   console.log(chalk.bgBlue.black('[mgrGet] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false, false]
 
   // [종료, 리붓, 절전, 메세지 유뮤, 메세지 내용, 명령, tm]]
   res.send(JSON.stringify(mgrData[grade][room]))
-  mgrData[grade][room] = [false, false, false, false, '', mgrData[grade][room][5], mgrData[grade][room][6]]
+  mgrData[grade][room] = [false, false, false, false, '', mgrData[grade][room][5], mgrData[grade][room][6], mgrData[grade][room][7]]
 })
 
 app.put('/api/mgrJson/:grade/:room', (req, res) => {
   const { grade, room } = req.params
   console.log(chalk.bgGreen.black('[mgrPut] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false, false]
 
   mgrData[grade][room][5] = JSON.parse(req.body.split(';')[0])
   mgrData[grade][room][6] = JSON.parse(req.body.split(';')[1])
@@ -107,7 +107,7 @@ app.get('/api/mgrJson/:grade/:room/:proc', (req, res) => {
   const { grade, room, proc } = req.params
   console.log(chalk.bgBlue.black('[mgrGet] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false, false]
 
   switch (proc) {
     case 'shutdown':
@@ -125,6 +125,16 @@ app.get('/api/mgrJson/:grade/:room/:proc', (req, res) => {
       res.sendStatus(200)
       break
 
+    case 'soundOn':
+      mgrData[grade][room][7] = true
+      res.sendStatus(200)
+      break
+
+    case 'soundOff':
+      mgrData[grade][room][7] = false
+      res.sendStatus(200)
+      break
+
     default:
       res.sendStatus(404)
       break
@@ -138,7 +148,7 @@ app.get('/api/msgJson/:grade/:room/:message', (req, res) => {
   const { grade, room, message } = req.params
   console.log(chalk.bgBlue.black('[msgGet] ' + grade + '-' + room + ' by ' + req.ip))
 
-  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false]
+  if (!mgrData[grade][room]) mgrData[grade][room] = [false, false, false, false, '', false, false, false]
 
   mgrData[grade][room][3] = true
   mgrData[grade][room][4] = message

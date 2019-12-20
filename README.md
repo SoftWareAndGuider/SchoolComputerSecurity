@@ -222,16 +222,16 @@ body로 `text/plain`을 받습니다, body는 다음의 형식이여야 합니�
 학년, 반에 맞는 관리 데이터를 JSON Array로 전송한 후 초기화 합니다
 ```json
 // 형식
-// [종료, 재시작, 절전, 메세지 유무, 메세지 내용, 명령프롬포트 허가 유무, 작업관리자 허가 유무]
+// [종료, 재시작, 절전, 메세지 유무, 메세지 내용, 명령프롬포트 허가 유무, 작업관리자 허가 유무, 소리 켜짐 유무]
 
 // 초기값
-[false, false, false, false, "", false, false]
+[false, false, false, false, "", false, false, false]
 
 // 예시) 종료를 요청했을 경우
-[true, false, false, false, "", true|false, true|false]
+[true, false, false, false, "", true|false, true|false, true|false]
 
 // 예시) 메세지가 있을경우
-[false, false, false true, "메세지 내용", true|false, true|false]
+[false, false, false true, "메세지 내용", true|false, true|false, true|false]
 ```
 
 * Content-Type: `application/json`
@@ -249,6 +249,8 @@ body로 `text/plain`을 받습니다, body는 다음의 형식이여야 합니�
 * `shutdown` : 종료
 * `restart` : 재시작
 * `powerSave` : 절전
+* `soundOn` : 소리 켜짐
+* `soundOff` : 소리 꺼짐
 
 #### Sec6: 메세지 송신
 
@@ -273,7 +275,6 @@ body로 `text/plain`을 받습니다, body는 다음의 형식이여야 합니�
 PR의 규칙은 딱히 존제하진 않습니다, 하지만 최소한 다음을 따라주시기 바랍니다:
 * eslint를 통하여 Standard.js를 준수해 주십시오 (세미콜론 없음, 작은 따옴표 사용)
 * package-lock.json을 생성하지 말아주십시오, 생성되었다면 삭제해 주십시오
-* hashCrypto.js파일을 올리지 않도록 해주십시오, 암호화 알고리즘이 들어 있습니다
 * 커밋이름은 업데이트 내용과 관련있어야 합니다
 
 ## 저작권 및 유의사항
